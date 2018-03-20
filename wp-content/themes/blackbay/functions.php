@@ -22,6 +22,21 @@ function footer_scripts() {
 	wp_enqueue_script('fontawesome');
 }
 
+/* BUTTONS */
+function boxed_buttons($atts, $content = null)
+{
+    return '<div class="button dark">' . $content . '</div>';
+}
+
+function boxed_buttons_dark($atts, $content = null)
+{
+    return '<div class="button light">' . $content . '</div>';
+}
+
 // ACTIONS, OPTIONS AND FILTERS
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 add_action('init', 'footer_scripts');
+
+// SHORTCODES
+add_shortcode('light_button', 'boxed_buttons');
+add_shortcode('dark_button', 'boxed_buttons_dark');
