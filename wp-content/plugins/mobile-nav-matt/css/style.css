@@ -7,22 +7,24 @@ button.hamburger:hover {
 }
 
 .body-overlay {
-	position: fixed;
+	position: absolute;
 	width: 100%;
-	height: 100%;
-	background: #000;
-	opacity: 0;
+	background: #fff;
 	top: 0;
 	left: 0;
 	z-index: 2;
 	transition: 0.5s ease-in-out;
-	visibility: hidden;
+	height: calc(100% - 46px);
+}
+
+#page-container {
+	position: relative;
+	z-index: 3;
 }
 
 .is-active .body-overlay {
 	transition: 0.5s ease-in-out;
-	opacity: .85;
-	visibility: visible;
+	transform: translateX(-250px);
 }
 
 .mobile-nav span.sub-toggle {
@@ -40,19 +42,23 @@ button.hamburger:hover {
   font-size: 20px;
 }
 
+.mobile-nav-container button:hover {
+	background: none;
+	transition: all 0.5s ease-in-out;
+}
+
 .mobile-nav {
 	position: fixed;
-	right: -250px;
+	right: 0;
+	transform: translateX(0);
 	width: 250px;
 	transition: 0.5s ease-in-out;
 	height: 100%;
 	top: 0;
-	background: #d12229;
-	z-index: 999;
-	padding: 80px 0 0;
-	visibility: hidden;
-	overflow: auto;
 	-webkit-overflow-scrolling: touch;
+	z-index: 1;
+	visibility: hidden;
+	background: #000;
 }
 
 .sub-toggle .fa {
@@ -95,9 +101,14 @@ button.hamburger:hover {
 }
 
 .is-active .mobile-nav, #page-container.is-active {
-	transform: translateX(-250px);
+	transform: translateX(0);
 	transition: 0.5s ease-in-out;
 	visibility: visible;
+}
+
+#page-container.is-active {
+	transform: translateX(-250px);
+	transition: 0.5s ease-in-out;
 }
 
 .mobile-nav-container {
@@ -107,9 +118,9 @@ button.hamburger:hover {
 	width: 90%;
 }
 
-#page-container, #main-header {
+#page-container {
+	transition: 0.5s ease-in-out;
 	transform: translateX(0);
-	transition: 0.5s ease-in-out!important;
 }
 
 .mobile-nav .sub-menu {
@@ -130,24 +141,27 @@ body .hamburger {
 	height: 30px;
 }
 
-body .hamburger.hamburger--squeeze {
-	position: absolute;
-	right: 5%;
-}
-
 body .hamburger:hover {
 	opacity: 1;
 }
 
-.hamburger.reveal {
-	transition: 0.5s ease-in-out;
-	background-color: #003868;
-	right: 0;
-	padding-right: 10px;
+.mobile-nav li.menu-item-has-children span.sub-toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #000;
+  line-height: 52px;
+  background: rgba(150, 100, 0, .75);
+  padding: 0 10px;
+  z-index: 10;
+  height: 46px;
+  width: 52px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .hamburger.is-active {
-	/*transform: translateX(-250px);*/
+	transform: translateX(-250px);
 	transition: 0.5s ease-in-out;
 	
 }

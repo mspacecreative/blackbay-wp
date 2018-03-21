@@ -4,7 +4,7 @@
 </div>
 <!-- END TAGLINE -->
 
-<div class="owl-carousel">
+<div class="hero">
 	<?php 
 	$loop = new WP_Query( array( 'post_type' => 'hero', 'order' => 'ASC' ) );
 	    if ( $loop->have_posts() ) :

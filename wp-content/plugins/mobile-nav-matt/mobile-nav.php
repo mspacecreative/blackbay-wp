@@ -19,10 +19,10 @@
  
  function mobilenavPlugin() {
  	ob_start(); ?>
- <div class="body-overlay"></div>	
+ <!--<div class="body-overlay"></div>-->	
  	
  <div class="mobile-nav-container">
- 	<button class="hamburger" type="button">
+ 	<button class="hamburger hamburger--squeeze" type="button">
  		 <span class="hamburger-box">
  		    <span class="hamburger-inner"></span>
  		 </span>
@@ -30,11 +30,6 @@
  </div>
  	
  <div class="mobile-nav">
- 	<button class="hamburger hamburger--squeeze is-active" type="button">
- 		 <span class="hamburger-box">
- 		    <span class="hamburger-inner"></span>
- 		 </span>
- 	</button>
  		<?php 
  		
  			$menu = wp_nav_menu( array(

@@ -9,12 +9,7 @@
  */
  
  function hero_slider_assets() {
- 	wp_enqueue_style( 'hero-style', plugin_dir_url( __FILE__ ) . 'css/hero.css', array(), null );
- 	wp_enqueue_style( 'owl-style', plugin_dir_url( __FILE__ ) . 'css/owl.carousel.min.css', array(), null );
- 	wp_enqueue_style( 'owl-theme-style', plugin_dir_url( __FILE__ ) . 'css/owl.theme.default.min.css', array(), null );
- 	wp_enqueue_script( 'owl-script', plugin_dir_url( __FILE__ ) . 'js/owl.carousel.min.js', array( 'jquery' ), '1.0', true );
- 	wp_enqueue_script( 'hero-script', plugin_dir_url( __FILE__ ) . 'js/hero.js', array( 'jquery' ), '1.0', true );
- }
+ 	wp_enqueue_style( 'hero-style', plugin_dir_url( __FILE__ ) . 'css/hero.css', array(), null ); }
  
  function hero_slider() {
  	ob_start();

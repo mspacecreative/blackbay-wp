@@ -5,20 +5,23 @@ $('span.sub-toggle').click(function (){
   $(this).children().toggleClass('fa-angle-down fa-angle-up');
 });
 
-//$('li.menu-item-has-children').css('width', $('#menu-main-menu').width()-$('.sub-toggle').outerWidth());
+// BODY OVERLAY HEIGHT
+/*function bodyOverlayHeight() {
+	$('.body-overlay').height($('#page-container').outerHeight());
+}*/
 
 // HAMBURGER ICON ANIMATION
 $('.hamburger').click(function() {
-	$('body').toggleClass('is-active');
+	$('.hamburger, body, #page-container').toggleClass('is-active');
 });
 
 $('.body-overlay').click(function() {
-	$('body').toggleClass('is-active');
+	$('.hamburger, body, #page-container').toggleClass('is-active');
 });
 
 // CLOSE PANEL UPON LINK CLICK
 $('.mobile-nav li > a').click(function() {
-	$('body').toggleClass('is-active');
+	$('.hamburger, body, #page-container').toggleClass('is-active');
 });
 
 // HAMBURGER VERTICAL ALIGN
@@ -28,8 +31,10 @@ function hamburgerIcon() {
 
 $(document).ready(function () {
 	hamburgerIcon();
+	//bodyOverlayHeight();
 });
 
 $(window).resize(function () {
 	hamburgerIcon();
+	//bodyOverlayHeight();
 });
