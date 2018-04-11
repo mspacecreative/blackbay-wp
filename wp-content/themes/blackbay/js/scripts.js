@@ -1,5 +1,8 @@
 $(function () {
 
+	// FIX SUB MENU ITEM
+	$('.mobile-nav li.menu-item-has-children').removeClass('menu-item-has-children');
+	
 	// FULL HEIGHT HER0
 	function heroBanner() {
 		$('.hero-bg').height($(window).height());

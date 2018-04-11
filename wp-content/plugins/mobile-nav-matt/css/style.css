@@ -33,10 +33,10 @@ button.hamburger:hover {
   top: 0;
   color: #000;
   line-height: 52px;
-  background: rgba(255, 255, 255, .15);
+  background: rgba(150, 100, 0, .75);
   padding: 0 10px;
   z-index: 10;
-  height: 54px;
+  height: 46px;
   width: 52px;
   text-align: center;
   font-size: 20px;
@@ -58,7 +58,7 @@ button.hamburger:hover {
 	-webkit-overflow-scrolling: touch;
 	z-index: 1;
 	visibility: hidden;
-	background: #000;
+	background: #333;
 }
 
 .sub-toggle .fa {
@@ -82,7 +82,7 @@ button.hamburger:hover {
 }
 
 .mobile-nav li li {
-	background: #b21d23;
+	background: #222;
 }
 
 .mobile-nav .menu li {
