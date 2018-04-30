@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Custom Post Type UI - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-07-11 19:41:22+0000\n"
+"PO-Revision-Date: 2018-04-16 16:32:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,7 +11,15 @@ msgstr ""
 "Language: en_CA\n"
 "Project-Id-Version: Plugins - Custom Post Type UI - Stable (latest release)\n"
 
-#: inc/tools.php:751
+#: inc/support.php:64
+msgid "View our Layouts page"
+msgstr "View our Layouts page"
+
+#: inc/support.php:60
+msgid "Please note that %s this plugin will not handle display %s of registered post types or taxonomies in your current theme. It simply registers them for you. To display your data, check out %s. %s to see some examples that are available with Custom Post Type UI Extended. If all else fails, visit us on the %s"
+msgstr "Please note that %s this plugin will not handle display %s of registered post types or taxonomies in your current theme. It simply registers them for you. To display your data, check out %s. %s to see some examples that are available with Custom Post Type UI Extended. If all else fails, visit us on the %s"
+
+#: inc/tools.php:768
 msgid "All of the selectable code snippets below are useful if you wish to migrate away from CPTUI and retain your existing registered post types or taxonomies."
 msgstr "All of the selectable code snippets below are useful if you wish to migrate away from CPTUI and retain your existing registered post types or taxonomies."
 
@@ -739,23 +747,23 @@ msgstr "Archives file name examples."
 msgid "Template Hierarchy"
 msgstr "Template Hierarchy"
 
-#: inc/tools.php:815
+#: inc/tools.php:832
 msgid "Send debug info"
 msgstr "Send debug info"
 
-#: inc/tools.php:806
+#: inc/tools.php:823
 msgid "Please provide an email address to send debug information to: "
 msgstr "Please provide an email address to send debug information to: "
 
-#: inc/tools.php:779
+#: inc/tools.php:796
 msgid "%s Taxonomy"
 msgstr "%s Taxonomy"
 
-#: inc/tools.php:762
+#: inc/tools.php:779
 msgid "%s Post Type"
 msgstr "%s Post Type"
 
-#: inc/tools.php:652
+#: inc/tools.php:669
 msgid "This will not export the associated posts or taxonomy terms, just the settings."
 msgstr "This will not export the associated posts or taxonomy terms, just the settings."
 
@@ -1432,7 +1440,7 @@ msgstr "Post Type"
 msgid "Post Types and Taxonomies registered by Custom Post Type UI."
 msgstr "Post Types and Taxonomies registered by Custom Post Type UI."
 
-#: inc/tools.php:327
+#: inc/tools.php:330
 msgid "No post types to display at this time"
 msgstr "No post types to display at this time"
 
@@ -1440,87 +1448,87 @@ msgstr "No post types to display at this time"
 msgid "No taxonomies to display at this time"
 msgstr "No taxonomies to display at this time"
 
-#: inc/tools.php:768
+#: inc/tools.php:785
 msgid "All CPT UI Taxonomies"
 msgstr "All CPT UI Taxonomies"
 
-#: inc/tools.php:754 inc/tools.php:763 inc/tools.php:771 inc/tools.php:780
+#: inc/tools.php:771 inc/tools.php:780 inc/tools.php:788 inc/tools.php:797
 msgid "Copy/paste the code below into your functions.php file."
 msgstr "Copy/paste the code below into your functions.php file."
 
-#: inc/tools.php:749
+#: inc/tools.php:766
 msgid "All CPT UI Post Types"
 msgstr "All CPT UI Post Types"
 
-#: inc/tools.php:747
+#: inc/tools.php:764
 msgid "Get Post Type and Taxonomy Code"
 msgstr "Get Post Type and Taxonomy Code"
 
-#: inc/tools.php:729
+#: inc/tools.php:746
 msgid "Use the content above to import current taxonomies into a different WordPress site. You can also use this to simply back up your taxonomy settings."
 msgstr "Use the content above to import current taxonomies into a different WordPress site. You can also use this to simply back up your taxonomy settings."
 
-#: inc/tools.php:723
+#: inc/tools.php:740
 msgid "No taxonomies registered yet."
 msgstr "No taxonomies registered yet."
 
-#: inc/tools.php:717
+#: inc/tools.php:734
 msgid "Export Taxonomies"
 msgstr "Export Taxonomies"
 
-#: inc/tools.php:708
+#: inc/tools.php:725
 msgid "To import taxonomies from a different WordPress site, paste the exported content from that site and click the \"Import\" button."
 msgstr "To import taxonomies from a different WordPress site, paste the exported content from that site and click the \"Import\" button."
 
-#: inc/tools.php:698
+#: inc/tools.php:715
 msgid "Import Taxonomies"
 msgstr "Import Taxonomies"
 
-#: inc/tools.php:691
+#: inc/tools.php:708
 msgid "Use the content above to import current post types into a different WordPress site. You can also use this to simply back up your post type settings."
 msgstr "Use the content above to import current post types into a different WordPress site. You can also use this to simply back up your post type settings."
 
-#: inc/tools.php:688 inc/tools.php:726
+#: inc/tools.php:705 inc/tools.php:743
 msgid "To copy the system info, click below then press Ctrl + C (PC) or Cmd + C (Mac)."
 msgstr "To copy the system info, click below then press Ctrl + C (PC) or Cmd + C (Mac)."
 
-#: inc/tools.php:685
+#: inc/tools.php:702
 msgid "No post types registered yet."
 msgstr "No post types registered yet."
 
-#: inc/tools.php:679
+#: inc/tools.php:696
 msgid "Export Post Types"
 msgstr "Export Post Types"
 
-#: inc/tools.php:674 inc/tools.php:712
+#: inc/tools.php:691 inc/tools.php:729
 msgid "Import"
 msgstr "Import"
 
-#: inc/tools.php:670
+#: inc/tools.php:687
 msgid "To import post types from a different WordPress site, paste the exported content from that site and click the \"Import\" button."
 msgstr "To import post types from a different WordPress site, paste the exported content from that site and click the \"Import\" button."
 
-#: inc/tools.php:666 inc/tools.php:704
+#: inc/tools.php:683 inc/tools.php:721
 msgid "Importing will overwrite previous registered settings."
 msgstr "Importing will overwrite previous registered settings."
 
-#: inc/tools.php:666 inc/tools.php:704
+#: inc/tools.php:683 inc/tools.php:721
 msgid "Note:"
 msgstr "Note:"
 
-#: inc/tools.php:663 inc/tools.php:701
+#: inc/tools.php:680 inc/tools.php:718
 msgid "Paste content here."
 msgstr "Paste content here."
 
-#: inc/tools.php:660
+#: inc/tools.php:677
 msgid "Import Post Types"
 msgstr "Import Post Types"
 
-#: inc/tools.php:651
+#: inc/tools.php:668
 msgid "NOTE"
 msgstr "NOTE"
 
-#: inc/tools.php:645
+#: inc/tools.php:662
 msgid "If you are wanting to migrate registered post types or taxonomies from this site to another, that will also use Custom Post Type UI, use the import and export functionality. If you are moving away from Custom Post Type UI, use the information in the \"Get Code\" tab."
 msgstr "If you are wanting to migrate registered post types or taxonomies from this site to another, that will also use Custom Post Type UI, use the import and export functionality. If you are moving away from Custom Post Type UI, use the information in the \"Get Code\" tab."
 
@@ -1666,7 +1674,7 @@ msgstr "Follow on Twitter:"
 msgid "%s version %s by %s"
 msgstr "%s version %s by %s"
 
-#. #-#-#-#-#  custom-post-type-ui-code.pot (Custom Post Type UI 1.5.7) 
+#. #-#-#-#-#  custom-post-type-ui-code.pot (Custom Post Type UI 1.5.8) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: inc/about.php:34 inc/utility.php:106
