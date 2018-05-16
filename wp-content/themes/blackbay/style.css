@@ -1390,9 +1390,17 @@ p:last-of-type {
 	top: 0;
 }
 
+.bevel-overlay {
+	position: fixed;
+	z-index: 1;
+}
+
 .featured-bg-img img {
 	width: 100%;
-	clip-path: polygon(100% 0, 100% 100%, 100% 55%, 70% 0);
+}
+
+.container {
+	z-index: 2;
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
