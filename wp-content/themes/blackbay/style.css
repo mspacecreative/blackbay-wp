@@ -1659,9 +1659,13 @@ article h1 {
 	z-index: 2;
 }
 
-.grid-item:hover {
+.grid-item-shadow:hover {
 	transition: 0.5s ease-in-out;
 	box-shadow: 0 0 15px #999;
+}
+
+.grid-item-shadow {
+	transition: 0.5s ease-in-out;
 }
 
 .grid-item:hover .grid-inner:before {
