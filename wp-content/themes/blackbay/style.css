@@ -606,6 +606,8 @@ header nav .menu-item-has-children:hover .sub-menu {
 
 #main-footer {
 	background: #000;
+	z-index: 1;
+	position: relative;
 }
 
 .version-3 nav ul ul li {
