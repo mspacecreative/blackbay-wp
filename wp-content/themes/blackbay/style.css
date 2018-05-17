@@ -1398,6 +1398,10 @@ p:last-of-type {
 	width: 100%;
 }
 
+.bevel-overlay img {
+	max-width: none;
+}
+
 .featured-bg-img img {
 	width: 100%;
 }
