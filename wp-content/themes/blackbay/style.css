@@ -1395,6 +1395,7 @@ p:last-of-type {
 .bevel-overlay {
 	position: fixed;
 	z-index: 1;
+	width: 100%;
 }
 
 .featured-bg-img img {
@@ -1697,11 +1698,11 @@ article h1 {
 }
 }
 
-@media (min-width: 1600px) {
+/*@media (min-width: 1600px) {
 
 .version-3 header {
 	max-width: 1600px;
 	left: 50%;
 	transform: translateX(-50%);
 }
-}
+}*/
