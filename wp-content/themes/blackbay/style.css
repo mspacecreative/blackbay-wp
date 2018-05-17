@@ -1400,6 +1400,7 @@ p:last-of-type {
 
 .bevel-overlay img {
 	max-width: none;
+	width: 100%;
 }
 
 .featured-bg-img img {
