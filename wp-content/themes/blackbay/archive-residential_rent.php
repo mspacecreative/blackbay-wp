@@ -34,7 +34,7 @@ get_header();
 										<?php if ( has_post_thumbnail() ) {
 													    the_post_thumbnail();
 											} else { ?>
-											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blackbay_placeholder.jpg" alt="<?php the_title(); ?>" /> 
+											<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/blackbay_placeholder.png" alt="<?php the_title(); ?>" /> 
 											<?php } ?>
 									</div>
 									<p><?php the_title(); ?></p>
