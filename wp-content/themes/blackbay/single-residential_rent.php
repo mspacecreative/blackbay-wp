@@ -43,18 +43,20 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 			<!-- LEFT SIDE CONTENT SECTION -->
 			<div class="left-content">
 			
-				<h1 class="dark"><?php the_title(); ?></h1>
-				
-				<?php 
-				if ( have_posts() ) {
-					while ( have_posts() ) {
-						the_post();
+				<div class="title-desc-container">
+					<h1 class="dark"><?php the_title(); ?></h1>
+					
+					<?php 
+					if ( have_posts() ) {
+						while ( have_posts() ) {
+							the_post();
+								
+								the_content();
 							
-							the_content();
-						
-					} // end while
-				} // end if
-				?>
+						} // end while
+					} // end if
+					?>
+				</div>
 				
 				<!-- CLEARFIX -->
 				<div class="clearfix">

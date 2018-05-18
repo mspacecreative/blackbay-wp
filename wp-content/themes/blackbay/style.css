@@ -1411,6 +1411,10 @@ p:last-of-type {
 	z-index: 2;
 }
 
+.title-desc-container {
+	max-width: 650px;
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
 
 .headline h1, .headline.align-right h1 {
