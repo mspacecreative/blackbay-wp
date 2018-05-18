@@ -1412,7 +1412,7 @@ p:last-of-type {
 }
 
 .title-desc-container {
-	max-width: 650px;
+	max-width: 600px;
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
