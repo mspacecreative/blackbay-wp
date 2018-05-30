@@ -1236,7 +1236,7 @@ p:last-of-type {
 }
 
 .bevel-overlay {
-	background-image: url(img/bevel-overlay.png)!important;
+	background-image: url(img/bevel-overlay-mobile.png)!important;
 }
 
 .fw-container:before {
