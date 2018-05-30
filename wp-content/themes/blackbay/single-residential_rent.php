@@ -15,9 +15,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 	</div>
 	
 	<div class="featured-bg-img">
-		<?php if ( has_post_thumbnail() ) {
-					    the_post_thumbnail();
-			} ?>
+		<?php if (has_post_thumbnail( $post->ID ) ){
+		    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0]; 
+		} ?>
 	</div>
 	<?php
 		if ( et_builder_is_product_tour_enabled() ):
