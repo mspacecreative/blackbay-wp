@@ -1235,6 +1235,10 @@ p:last-of-type {
 	left: auto;
 }
 
+.bevel-overlay {
+	background-image: url(img/bevel-overlay.png)!important;
+}
+
 .fw-container:before {
 	display: none;
 }
