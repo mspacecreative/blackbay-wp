@@ -1403,6 +1403,12 @@ p:last-of-type {
 	background-size: cover!important;
 	background-position: top right;
 	background-attachment: scroll;
+	top: 0;
+}
+
+#main-content {
+	position: relative;
+	height: 100%;
 }
 
 .bevel-overlay img {
