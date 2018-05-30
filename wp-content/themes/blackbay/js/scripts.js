@@ -10,7 +10,7 @@ $(function () {
 	
 	// BEVEL OVERLAY
 	function bevelOverlay() {
-		$('.bevel-overlay').height($('#main-content').height());
+		$('.bevel-overlay, .featured-bg-img').height($('#main-content').height());
 	}
 	
 	$('p:empty').remove();
