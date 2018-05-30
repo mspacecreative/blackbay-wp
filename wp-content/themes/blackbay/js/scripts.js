@@ -9,9 +9,9 @@ $(function () {
 	}
 	
 	// BEVEL OVERLAY
-	/*function bevelOverlay() {
+	function bevelOverlay() {
 		$('.bevel-overlay').height($('#main-content').outerHeight());
-	}*/
+	}
 	
 	$('p:empty').remove();
 	
@@ -26,7 +26,7 @@ $(function () {
 		heroBanner();
 		
 		// BEVEL OVERLAY
-		//bevelOverlay();
+		bevelOverlay();
 		
 		// HOME PAGE SLIDER
 		$('.hero').slick({
@@ -104,7 +104,7 @@ $(function () {
 	    heroBanner();
 		
 		// BEVEL OVERLAY
-		//bevelOverlay();
+		bevelOverlay();
 	});
 
 });
