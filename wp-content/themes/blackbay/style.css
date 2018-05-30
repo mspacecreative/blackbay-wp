@@ -1393,7 +1393,7 @@ p:last-of-type {
 }
 
 .bevel-overlay {
-	position: fixed;
+	position: absolute;
 	z-index: 1;
 	width: 100%;
 }
