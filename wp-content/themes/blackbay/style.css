@@ -1401,7 +1401,7 @@ p:last-of-type {
 	z-index: 1;
 	width: 100%;
 	background-size: cover!important;
-	background-position: center;
+	background-position: top right;
 	background-attachment: scroll;
 }
 
