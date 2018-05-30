@@ -1386,7 +1386,7 @@ p:last-of-type {
 }
 
 .featured-bg-img {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	right: 0;
 	top: 0;
@@ -1396,7 +1396,6 @@ p:last-of-type {
 	position: absolute;
 	z-index: 1;
 	width: 100%;
-	height: calc(100% - 90px);
 }
 
 .bevel-overlay img {

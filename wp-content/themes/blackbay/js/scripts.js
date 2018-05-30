@@ -8,6 +8,11 @@ $(function () {
 		$('.hero-bg').height($(window).height());
 	}
 	
+	// BEVEL OVERLAY
+	function bevelOverlay() {
+		$('.bevel-overlay').height($(window).height() - $('header').outerHeight());
+	}
+	
 	$('p:empty').remove();
 	
 	$(document).ready(function () {
@@ -19,6 +24,9 @@ $(function () {
 		
 		// HERO SLIDER HEIGHT
 		heroBanner();
+		
+		// BEVEL OVERLAY
+		bevelOverlay();
 		
 		// HOME PAGE SLIDER
 		$('.hero').slick({
@@ -94,6 +102,9 @@ $(function () {
 	
 	$(window).resize(function () {
 	    heroBanner();
+		
+		// BEVEL OVERLAY
+		bevelOverlay();
 	});
 
 });
