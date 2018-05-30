@@ -10,9 +10,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 <div id="main-content">
 	
-	<div class="bevel-overlay">
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bevel-overlay.png" />
-	</div>
+	<div class="bevel-overlay" style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/bevel-overlay.png);"></div>
 	
 	<?php if (has_post_thumbnail( $post->ID ) ){
 	    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0]; 
