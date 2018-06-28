@@ -12,6 +12,8 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+	<!--IOS DISABLE PHONE-->
+	<meta name="format-detection" content="telephone=no">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<?php elegant_description(); ?>
 	<?php elegant_keywords(); ?>
