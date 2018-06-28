@@ -14,7 +14,7 @@ get_header();
 		<!-- SINGLE LISTING SECTION -->
 		<div class="fw-container clearfix">
 			
-			<h1 class="entry-title main_title"><?php _e('Residential Listings for Rent'); ?></h1>-
+			<h1 class="entry-title main_title"><?php _e('Residential Listings for Rent'); ?></h1>
 						
 						<div class="grid testimonial-container">
 						
