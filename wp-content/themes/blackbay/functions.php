@@ -61,10 +61,17 @@ function google_maps() {
     return ob_get_clean();
 }
 
+// GOOGLE MAP API
+function my_acf_init() {
+	
+	acf_update_setting('google_api_key', 'AIzaSyAMjm_0er-ybuWcVoPXYLSr82mn6bvNqCY');
+}
+
 // ACTIONS, OPTIONS AND FILTERS
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 add_action('init', 'styles_scripts');
 add_action( 'widgets_init', 'about_page_sidebar' );
+add_action('acf/init', 'my_acf_init');
 
 // SHORTCODES
 add_shortcode('light_button', 'boxed_buttons');
