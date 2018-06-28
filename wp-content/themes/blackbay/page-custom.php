@@ -6,7 +6,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 ?>
 
-<div id="main-content">
+<div id="main-content" style="background-color:<?php the_field('main-content_color'); ?>">
 
 <?php if ( ! $is_page_builder_used ) : ?>
 
