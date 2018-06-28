@@ -20,7 +20,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				
-				<div class="container" style="padding-bottom: 0;">
+				<div class="container">
 					<h1 class="entry-title main_title"><?php the_title(); ?></h1>
 				</div>
 
