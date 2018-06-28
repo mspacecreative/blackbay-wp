@@ -37,9 +37,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 					<div class="entry-content">
 					<?php if ( get_field( 'page_title_position' ) ): ?>
-						<h1 class="entry-title main_title"><?php the_title(); ?></h1>
-					<?php else: ?>
 						<h1 class="entry-title main_title" style="text-align: center;"><?php the_title(); ?></h1>
+					<?php else: ?>
+						<h1 class="entry-title main_title"><?php the_title(); ?></h1>
 					<?php endif; ?>
 					<?php
 						the_content();
