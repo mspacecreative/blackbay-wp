@@ -54,6 +54,13 @@ function about_page_sidebar() {
 	) );
 }
 
+// GOOGLE MAP
+function google_map() {
+    ob_start();
+    get_template_part('includes/google_map');
+    return ob_get_clean();
+}
+
 // ACTIONS, OPTIONS AND FILTERS
 add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 add_action('init', 'styles_scripts');
@@ -62,3 +69,4 @@ add_action( 'widgets_init', 'about_page_sidebar' );
 // SHORTCODES
 add_shortcode('light_button', 'boxed_buttons');
 add_shortcode('dark_button', 'boxed_buttons_dark');
+add_shortcode( 'google_map', 'google_map' );
