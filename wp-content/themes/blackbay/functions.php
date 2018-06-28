@@ -55,7 +55,7 @@ function about_page_sidebar() {
 }
 
 // GOOGLE MAP
-function google_map() {
+function google_maps() {
     ob_start();
     get_template_part('includes/google-map');
     return ob_get_clean();
@@ -69,4 +69,4 @@ add_action( 'widgets_init', 'about_page_sidebar' );
 // SHORTCODES
 add_shortcode('light_button', 'boxed_buttons');
 add_shortcode('dark_button', 'boxed_buttons_dark');
-add_shortcode( 'google_map', 'google_map' );
+add_shortcode( 'google_map', 'google_maps' );
