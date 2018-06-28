@@ -29,6 +29,9 @@ function styles_scripts() {
 	
 	wp_enqueue_style( 'slick', get_stylesheet_directory_uri() . '/css/slick.css', array(), null );
 	wp_enqueue_style('slick');
+	
+	wp_enqueue_style( 'rental', get_stylesheet_directory_uri() . '/css/rental_app.css', array(), null );
+	wp_enqueue_style('rental');
 }
 
 /* BUTTONS */
