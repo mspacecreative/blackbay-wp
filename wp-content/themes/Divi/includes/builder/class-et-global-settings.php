@@ -238,7 +238,6 @@ class ET_Global_Settings {
 			'et_pb_cta-background_repeat'                            => $background_image_defaults['repeat'],
 			'et_pb_cta-background_blend'                             => $background_image_defaults['blend'],
 			// Module: Divider
-			'et_pb_divider-show_divider'                             => 'off',
 			'et_pb_divider-divider_style'                            => 'solid',
 			'et_pb_divider-divider_weight'                           => '1',
 			'et_pb_divider-height'                                   => '1',
@@ -465,6 +464,9 @@ class ET_Global_Settings {
 			'et_pb_signup-background_position'                       => $background_image_defaults['position'],
 			'et_pb_signup-background_repeat'                         => $background_image_defaults['repeat'],
 			'et_pb_signup-background_blend'                          => $background_image_defaults['blend'],
+			'et_pb_signup-form_field_font_size'                      => '14',
+			'et_pb_signup-form_field_line_height'                    => $font_defaults['line_height'],
+			'et_pb_signup_form-form_field_letter_spacing'            => $font_defaults['letter_spacing'],
 			// Module: Slider Item (Slide)
 			'et_pb_slide-header_font_size'                           => '26px',
 			'et_pb_slide-header_color'                               => '#ffffff',
