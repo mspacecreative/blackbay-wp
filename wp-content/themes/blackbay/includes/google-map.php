@@ -213,7 +213,7 @@
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(43.64878, -79.37751),
                     map: map,
-                    icon: pinSymbol("#56c8e2"),
+                    icon: pinSymbol("#000000"),
                 });
             }
         </script>
