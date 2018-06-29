@@ -13,7 +13,7 @@
 						  <div style="background-image: url(<?php echo $backgroundImg[0] ?>);" class="hero-bg">
 						  	<div class="outer-hero-text-container">
 						  		<div class="inner-hero-text-container">
-						  			<h1><?php the_title(); ?></h1>
+						  			<!--<h1><?php the_title(); ?></h1>-->
 						  			<?php the_content();
 						  				if (get_field('hero_link')):
 						  			 ?>
