@@ -1396,9 +1396,10 @@ p:last-of-type {
 	height: 100%;
 	right: 0;
 	top: 0;
-	background-size: contain!important;
+	background-size: 100%!important;
 	background-position: top center;
 	background-attachment: scroll;
+	background-repeat: no-repeat;
 }
 
 .bevel-overlay {
