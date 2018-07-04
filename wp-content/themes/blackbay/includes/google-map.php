@@ -220,11 +220,11 @@
 				                '<div id="content" style="width:400px; background-color:red;">' +
 				                'My Text comes here' + 
 				                '</div>';
-								
-				var infowindow = new google.maps.InfoWindow({
+				
+				   var infowindow = new google.maps.InfoWindow({
 				            content: contentString,
 				            maxWidth: 400
-				});
+				        });
 				
 				google.maps.event.addListener(marker, 'click', function() { 
 				infoWindow.open(map, marker); 
