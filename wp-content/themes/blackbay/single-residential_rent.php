@@ -166,7 +166,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				if( !empty($location) ):
 				?>
 				<div class="acf-map">
-					<?php echo $location; ?>
+					<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
 				</div>
 				<?php endif; ?>
 				<!-- END GOOGLE MAP -->
