@@ -215,6 +215,14 @@
                     map: map,
                     icon: pinSymbol("#000000"),
                 });
+				
+				var infoWindow = new google.maps.InfoWindow({ 
+				content: 'The message that will be displayed when clicked' 
+				}); 
+				
+				google.maps.event.addListener(marker, 'click', function() { 
+				infoWindow.open(map, marker); 
+				}); 
             }
         </script>
 <div id="map" style="width: 100%; height: 300px; margin-bottom: 50px;"></div>
