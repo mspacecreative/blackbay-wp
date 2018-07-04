@@ -225,6 +225,10 @@
 				            content: contentString,
 				            maxWidth: 400
 				});
+				
+				google.maps.event.addListener(marker, 'click', function() { 
+				infoWindow.open(map, marker); 
+				}); 
             }
         </script>
 <div id="map" style="width: 100%; height: 300px; margin-bottom: 50px;"></div>
