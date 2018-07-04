@@ -243,7 +243,14 @@
 				
 				marker.addListener('click', function() {
 				    infowindow.open(map, marker);
-				  }); 
+				  });
+				  
+				 google.maps.event.addListener(marker, "click", function (e) {
+				  ib.close();
+				  ib.setOptions(myOptions);
+				  ib.open(map, this);
+				  map.setCenter(marker.getPosition());
+				 });
             }
         </script>
 <div id="map" style="width: 100%; height: 300px; margin-bottom: 50px;"></div>
