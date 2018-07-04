@@ -215,6 +215,16 @@
                     map: map,
                     icon: pinSymbol("#000000"),
                 });
+				
+				var contentString = 
+				                '<div id="content" style="width:400px; background-color:red;">' +
+				                'My Text comes here' + 
+				                '</div>';
+								
+				var infowindow = new google.maps.InfoWindow({
+				            content: contentString,
+				            maxWidth: 400
+				});
             }
         </script>
 <div id="map" style="width: 100%; height: 300px; margin-bottom: 50px;"></div>
