@@ -52,13 +52,13 @@
 	margin-right: 0;
 }
 
-input[type=text], input[type=email], input[type=tel], textarea {
+.rental_app input[type=text], .rental_app input[type=email], .rental_app input[type=tel], textarea {
 	width: 100%;
 	padding: 7px 10px;
 	font-family: "proxima-nova", Proxima Nova, sans-serif;
 	border: 1px solid #c9c9c9;
 	border-top-width: 3px;
-	outline: navy;
+	outline: none;
 	-webkit-border-radius:0; 
 	border-radius:0;
 }
@@ -73,18 +73,18 @@ input[type=text], input[type=email], input[type=tel], textarea {
 	margin: 25px 0;
 }
 
-input[type=checkbox], input[type=radio] {
+.rental_app input[type=checkbox], .rental_app input[type=radio] {
 	display: inline-block;
 	vertical-align: baseline;
 	position: relative;
 	top: -.1em;
 }
 
-input[type=checkbox] {
+.rental_app input[type=checkbox] {
 	margin: 10px 0 25px;
 }
 
-input[type=checkbox] ~ span, input[type=radio] ~ span {
+.rental_app input[type=checkbox] ~ span, .rental_app input[type=radio] ~ span {
 	margin-left: 5px;
 	margin-right: 15px;
 }
@@ -113,7 +113,7 @@ input[type=checkbox] ~ span, input[type=radio] ~ span {
 	display: inline-block;
 }
 
-input[type=radio] {
+.rental_app input[type=radio] {
 	margin: 0;
 }
 
