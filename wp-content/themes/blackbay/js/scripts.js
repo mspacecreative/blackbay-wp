@@ -96,7 +96,7 @@ $(function () {
 		    dots: true,
 		    autoplay: true,
 		    arrows: true,
-			autoHeight: true;
+			adaptiveHeight: true,
 		});
 		
 	});
