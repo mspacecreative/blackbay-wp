@@ -95,7 +95,8 @@ $(function () {
 		$('.photo-gallery').slick({
 		    dots: true,
 		    autoplay: true,
-		    arrows: true
+		    arrows: true,
+			autoHeight: true;
 		});
 		
 	});
