@@ -61,6 +61,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<div class="clearfix">
 				
 				<!-- BUILDING FEATURES -->
+				<?php if( have_rows('building_features') ): ?>
+				
 				<h3 class="line-rule-right"><span>Building Features</span></h3>
 				<!-- /BUILDING FEATURES -->
 					
@@ -70,13 +72,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<!-- BULLET BOX -->
 						<div class="bullet-box">
 							<ul>
-								<?php if( have_rows('building_features') ):
-								
-								 	while ( have_rows('building_features') ) : the_row(); ?>
+								<?php while ( have_rows('building_features') ) : the_row(); ?>
 								 	
 								<li><?php the_sub_field('features_list'); ?></li>
 								
-								<?php endwhile; else : endif; ?>
+								<?php endwhile; ?>
 							</ul>
 						</div>
 						<!-- END BULLET BOX -->
@@ -118,6 +118,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					
 				</div>
 				<!-- END CLEARFIX -->
+				
+				<?php else : endif; ?>
 				
 				<!-- PAGINATION -->
 				<div class="post-navigation clear">
