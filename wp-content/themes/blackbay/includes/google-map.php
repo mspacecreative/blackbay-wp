@@ -211,7 +211,7 @@
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(44.6518891, -63.5908714),
+                    position: new google.maps.LatLng(44.6416065, -63.579897),
                     map: map,
                     icon: pinSymbol("#000000"),
                 });
