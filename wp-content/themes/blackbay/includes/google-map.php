@@ -10,7 +10,7 @@
                     zoom: 15,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(44.6518891, -63.5908714), // BlackBay Group
+                    center: new google.maps.LatLng(44.6416065, -63.579897), // BlackBay Group
 
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.
