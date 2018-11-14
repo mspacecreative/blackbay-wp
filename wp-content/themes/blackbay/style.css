@@ -935,6 +935,14 @@ table.bullet-box tr {
 	border-bottom: 1px solid #e9e9e9;
 }
 
+table.bullet-box tr:last-of-type {
+	border-bottom: none;
+}
+
+table.bullet-box tr:last-of-type div.button {
+	margin-top: 10px;
+}
+
 table.bullet-box td {
 	padding: 15px 20px;
 	vertical-align: middle;
