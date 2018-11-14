@@ -101,11 +101,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<!-- /UNIT INFO -->
 						
 						<!-- CTA BUTTONS -->
-						<?php if( get_field('more_info_button') ): ?>
-							<div class="button light">
-								<a href="<?php the_field('more_info_button'); ?>" target="_blank"><?php the_field('external_link_label'); ?></a>
-							</div>
-						<?php endif; ?>
+						<?php if( have_rows('external_links') ): ?>
+							<?php while ( have_rows('external_links') ) : the_row(); ?>
+								<div class="button light">
+									<a href="<?php the_field('external_link_url'); ?>" target="_blank"><?php the_field('external_link_label'); ?></a>
+								</div>
+							<?php endwhile; else : 
+						endif; ?>
 						<!-- END CTA BUTTONS -->
 						
 					</div>
