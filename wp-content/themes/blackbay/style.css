@@ -937,6 +937,7 @@ table.bullet-box tr {
 
 table.bullet-box td {
 	padding: 20px;
+	vertical-align: middle;
 }
 
 .unit-info-box {
