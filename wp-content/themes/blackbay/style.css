@@ -939,10 +939,6 @@ table.bullet-box tr:last-of-type {
 	border-bottom: none;
 }
 
-table.bullet-box tr:last-of-type div.button {
-	padding: 0;
-}
-
 table.bullet-box tr:last-of-type div.button a {
 	border: none;
 	background: #000;
@@ -951,7 +947,12 @@ table.bullet-box tr:last-of-type div.button a {
 
 .left-content .button {
 	padding: 0;
-	margin: 15px 0 0;
+	margin: 25px 0 0;
+}
+
+table.bullet-box tr:last-of-type div.button {
+	padding: 0;
+	margin: 0;
 }
 
 table.bullet-box tr:last-of-type td {
