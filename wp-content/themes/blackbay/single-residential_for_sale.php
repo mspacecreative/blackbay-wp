@@ -63,7 +63,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<!-- BUILDING FEATURES -->
 				<?php if( have_rows('building_features') ): ?>
 				
-				<h3 class="line-rule-right"><span>Building Features</span></h3>
+				<h3 class="line-rule-right"><span>Property Details</span></h3>
 				<!-- /BUILDING FEATURES -->
 					
 					<!-- ONE HALF -->
@@ -106,7 +106,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						</div>
 						<div class="button light">
 							<?php if( get_field('more_info_button') ): ?>
-							<a href="<?php the_field('more_info_button'); ?>" target="_blank">More Information</a>
+							<a href="<?php the_field('more_info_button'); ?>" target="_blank"><?php the_field('external_link_label'); ?></a>
 							<?php endif; ?>
 						</div>
 						<!-- END CTA BUTTONS -->
