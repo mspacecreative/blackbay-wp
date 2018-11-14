@@ -949,6 +949,11 @@ table.bullet-box tr:last-of-type div.button a {
 	color: #fff;
 }
 
+.left-content .button {
+	padding: 0;
+	margin: 15px 0 0;
+}
+
 table.bullet-box tr:last-of-type td {
 	padding: 0;
 }
