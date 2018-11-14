@@ -19,12 +19,11 @@ $(function () {
 		
 		// VIEW MORE DETAILS BUTTON
 		$('.view-more').click(function() {
-			$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideToggle();
-			/*if ($('.bullet-box tr').css('display', 'table-row') == true) {
-				$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideUp();
-			} else {
+			if ($(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').css('display', 'none') == true) {
 				$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideDown();
-			}*/
+			} else {
+				$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideUp();
+			}
 		});
 		
 		if ($('table.bullet-box').hasClass('reveal')) {
