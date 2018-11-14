@@ -5,9 +5,9 @@ $(function () {
 		e.preventDefault();
 		$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
 		if ($('table.bullet-box').hasClass('reveal')) {
-			$(this).children('tr').slideDown();
+			$(this).parent().parent().prev('.bullet-box').children('tr').slideDown();
 		} else {
-			$(this).children('tr').slideUp();
+			$(this).parent().parent().prev('.bullet-box').children('tr').slideUp();
 		}
 	});
 	
