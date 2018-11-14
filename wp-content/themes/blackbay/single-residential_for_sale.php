@@ -72,6 +72,24 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						
 						<h3 class="line-rule-right"><span><?php echo $title; ?></span></h3>
 						
+						<?php if( have_rows('listing_details') ): ?>
+						
+						<table cellpadding="0" cellspacing="0" border="0" class="bullet-box">
+							<?php while ( have_rows('listing_details') ) : the_row(); ?>
+							<tr>
+								<td>
+									<span style="font-weight: bold;"><?php the_sub_field('detail_label'); ?><?php _e(': '); ?>
+									</span>
+								</td>
+								<td>
+									<?php the_sub_field('detail_description'); ?>
+								</td>
+							</tr>
+							<?php endwhile; ?>
+						</table>
+						
+						<?php endif; ?>
+						
 					<?php endwhile; ?>
 					
 				<?php endif; ?>
