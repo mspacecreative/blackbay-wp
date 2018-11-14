@@ -20,13 +20,16 @@ $(function () {
 		// VIEW MORE DETAILS BUTTON
 		$('.view-more').click(function(e) {
 			e.preventDefault();
-			$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
+			//$(this).parent().parent().prev('.bullet-box tr').toggleClass('reveal');
+			if ($('table.bullet-box tr').css('display', 'none') == true) {
+				$('table.bullet-box tr').slideDown();
+			}
 		});
 		
 		if ($('table.bullet-box').hasClass('reveal')) {
-			$(this).children('tr').slideDown();
+			$(this).children('tr').show();
 		} else {
-			$(this).children('tr').slideUp();
+			$(this).children('tr').hide();
 		}
 		
 		if ( $.trim( $('.half.prev-link').text() ).length == 0 ) {
