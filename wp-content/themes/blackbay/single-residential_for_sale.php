@@ -95,31 +95,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<?php endif; ?>
 				<!-- /PROPERTY DETAILS -->
 				
-				<!-- PROPERTY OVERVIEW -->
-				<?php if( have_rows('property_details') ): ?>
-				
-				<h3 class="line-rule-right"><span>Property Details</span></h3>
-				<table cellpadding="0" cellspacing="0" border="0" class="bullet-box">
-					<?php while ( have_rows('property_details') ) : the_row(); ?>
-					<tr>
-						<td>
-							<span style="font-weight: bold;"><?php the_sub_field('detail_label'); ?><?php _e(': '); ?>
-							</span>
-						</td>
-						<td>
-							<?php the_sub_field('detail_description'); ?>
-						</td>
-					</tr>
-					<?php endwhile; ?>
-				</table>
-				<?php else : endif; ?>
-				<!-- /PROPERTY OVERVIEW -->
-				
 				<!-- CTA BUTTONS -->
 				<?php if( have_rows('external_links') ): ?>
 					<?php while ( have_rows('external_links') ) : the_row(); ?>
 						<div class="button light">
-							<a href="<?php the_sub_field('external_link_url'); ?>" target="_blank"><?php the_sub_field('external_link_label'); ?></a>
+							<a href="<?php the_sub_field('link_url'); ?>" target="_blank"><?php the_sub_field('link_label'); ?></a>
 						</div>
 					<?php endwhile; else : 
 				endif; ?>
