@@ -3,7 +3,12 @@ $(function () {
 	// VIEW MORE DETAILS BUTTON
 	$('.view-more').click(function(e) {
 		e.preventDefault();
-		$(this).parent().parent().prev('.bullet-box').slideToggle();
+		$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
+		if ($('table.bullet-box').hasClass('reveal')) {
+			$(this).parent().parent().prev('.bullet-box tr').slideDown();
+		} else {
+			$(this).parent().parent().prev('.bullet-box tr').slideUp();
+		}
 	});
 	
 	// FIX SUB MENU ITEM
