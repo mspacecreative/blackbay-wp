@@ -930,6 +930,10 @@ table.bullet-box {
 	width: 100%;
 }
 
+table.bullet-box tr {
+	border-bottom: 1px solid rgba(255,255,255,.75);
+}
+
 table.bullet-box td {
 	padding: 20px;
 }
