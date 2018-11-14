@@ -937,7 +937,7 @@ table.bullet-box tr {
 }
 
 table.bullet-box tr:nth-child(1), table.bullet-box tr:nth-child(2), table.bullet-box tr:nth-child(3), table.bullet-box tr:nth-child(4), table.bullet-box tr:nth-child(5) {
-	display: block;
+	display: table-row;
 }
 
 table.bullet-box td {
