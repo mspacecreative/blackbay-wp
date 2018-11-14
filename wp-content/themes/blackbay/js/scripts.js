@@ -3,7 +3,7 @@ $(function () {
 	$('table.bullet-box').each(function(){
 	    var max = 5
 	    if ($(this).find('tr').length > max) {
-	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><span class="show_more">(see more)</span></tr>');
+	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td><span class="show_more">(see more)</span></td></tr>');
 	        $('.sub_accordian').click( function(){
 	            $(this).siblings(':gt('+max+')').toggle();
 	            if ( $('.show_more').length ) {
