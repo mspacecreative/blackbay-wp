@@ -4,12 +4,13 @@ $(function () {
 	$('.view-more').click(function(e) {
 		e.preventDefault();
 		$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
-		if ($('table.bullet-box').hasClass('reveal')) {
-			$(this).parent().parent().prev('.bullet-box').children('tr').slideDown();
-		} else {
-			$(this).parent().parent().prev('.bullet-box').children('tr').slideUp();
-		}
 	});
+	
+	if ($('table.bullet-box').hasClass('reveal')) {
+		$(this).children('tr').slideDown();
+	} else {
+		$(this).children('tr').slideUp();
+	}
 	
 	// FIX SUB MENU ITEM
 	$('.mobile-nav li.menu-item-has-children').removeClass('menu-item-has-children');
