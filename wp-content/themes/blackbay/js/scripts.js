@@ -18,12 +18,8 @@ $(function () {
 	$(document).ready(function () {
 		
 		// VIEW MORE DETAILS BUTTON
-		$('.view-more').click(function(e) {
-			e.preventDefault();
-			//$(this).parent().parent().prev('.bullet-box tr').toggleClass('reveal');
-			if ($('table.bullet-box tr').css('display', 'none') == true) {
-				$(this).show();
-			}
+		$('.view-more').click(function() {
+			$(this).parent().parent().prev('.bullet-box').children('tr').slideDown();
 		});
 		
 		if ($('table.bullet-box').hasClass('reveal')) {

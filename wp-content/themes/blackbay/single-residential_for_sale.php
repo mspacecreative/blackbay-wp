@@ -90,7 +90,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						
 						<div class="button light">
 							<p>
-								<a href="#" class="view-more"><?php _e('View More'); ?></a>
+								<a href="javascript:void(0);" class="view-more"><?php _e('View More'); ?></a>
 							</p>
 						</div>
 						
