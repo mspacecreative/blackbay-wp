@@ -3,7 +3,7 @@ $(function () {
 	// VIEW MORE DETAILS BUTTON
 	$('.view-more').click(function(e) {
 		e.preventDefault;
-		$(this).parent().prev('.bullet-box').toggleClass('reveal');
+		$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
 	});
 	
 	// FIX SUB MENU ITEM
