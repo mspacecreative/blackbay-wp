@@ -19,7 +19,7 @@ $(function () {
 		
 		// VIEW MORE DETAILS BUTTON
 		$('.view-more').click(function() {
-			$(this).parent().parent().siblings('.bullet-box').children('body').children('tr').slideDown();
+			$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideDown();
 		});
 		
 		if ($('table.bullet-box').hasClass('reveal')) {
