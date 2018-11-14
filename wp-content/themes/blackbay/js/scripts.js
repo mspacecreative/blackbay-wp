@@ -2,7 +2,7 @@ $(function () {
 
 	// VIEW MORE DETAILS BUTTON
 	$('.view-more').click(function(e) {
-		e.preventDefault;
+		e.preventDefault();
 		$(this).parent().parent().prev('.bullet-box').toggleClass('reveal');
 	});
 	
