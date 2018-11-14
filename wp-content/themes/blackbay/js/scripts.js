@@ -3,13 +3,13 @@ $(function () {
 	$('table.bullet-box').each(function(){
 	    var max = 5
 	    if ($(this).find('tr').length > max) {
-	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td><div class="show_more button light">View More</div></td></tr>');
+	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td></tr>');
 	        $('.sub_accordian').click( function(){
 	            $(this).siblings(':gt('+max+')').toggle();
 	            if ( $('.show_more').length ) {
-	                $(this).html('<div class="show_less button light">(see less)</div>');
+	                $(this).html('<div class="show_less button light"><a href="javascript:void(0);">View Less</a></div>');
 	            } else {
-	                $(this).html('<div class="show_more button light">(see more)</div>');
+	                $(this).html('<div class="show_more button light"><a href="javascript:void(0);">View More</a></div>');
 	            };
 	        });
 	    };
