@@ -562,6 +562,10 @@ header.fixed a {
 	display: none!important;
 }
 
+.slick-slide img {
+	width: 100%;
+}
+
 nav .sub-menu {
 	opacity: 0;
 	visibility: hidden;
