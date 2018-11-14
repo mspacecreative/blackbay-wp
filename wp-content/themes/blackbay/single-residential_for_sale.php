@@ -63,6 +63,20 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<?php endif; ?>
 				<!-- /PROPERTY DESCRIPTION -->
 				
+				<!-- PROPERTY DETAILS -->
+				<?php if( have_rows('listing_overview') ): 
+				
+					while( have_rows('listing_overview') ): the_row(); 
+					// vars
+					$title = get_sub_field('listing_details_title'); ?>
+						
+						<h3 class="line-rule-right"><span><?php echo $title; ?></span></h3>
+						
+					<?php endwhile; ?>
+					
+				<?php endif; ?>
+				<!-- /PROPERTY DETAILS -->
+				
 				<!-- PROPERTY OVERVIEW -->
 				<?php if( have_rows('property_details') ): ?>
 				
