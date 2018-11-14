@@ -7,8 +7,10 @@ $(function () {
 	        $('.sub_accordian').click( function(){
 	            $(this).siblings(':gt('+max+')').toggle();
 	            if ( $('.show_more').length ) {
-	                $(this).html('<tr class="sub_accordian"><td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">View Less</a></div></td></tr>');
-	            }
+	                $(this).html('<tr class="sub_accordian"><td colspan="2" style="border-top: 2px solid #333;"><div class="show_less button light"><a href="javascript:void(0);">View Less</a></div></td></tr>');
+	            } else {
+	                $(this).html('<tr class="sub_accordian"><td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td></tr>');
+	            };
 	        });
 	    };
 	});
