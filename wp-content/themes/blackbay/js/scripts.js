@@ -22,9 +22,7 @@ $(function () {
 			e.preventDefault();
 			//$(this).parent().parent().prev('.bullet-box tr').toggleClass('reveal');
 			if ($('table.bullet-box tr').css('display', 'none') == true) {
-				$('table.bullet-box tr').slideUp();
-			} else {
-				$('table.bullet-box tr').slideDown();
+				$(this).slideUp();
 			}
 		});
 		
