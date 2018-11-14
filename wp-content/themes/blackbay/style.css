@@ -658,16 +658,6 @@ html .et_pb_section, html .et_pb_row {
 	position: relative;
 }
 
-.sub_accordian:before {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 2px;
-	background: #333;
-	content: '';
-	left: 0;
-}
-
 .line-rule-right {
 	font-size: 25px;
 	position: relative;
@@ -967,10 +957,6 @@ table.bullet-box tr:last-of-type div.button {
 
 table.bullet-box tr:last-of-type td {
 	padding: 0;
-}
-
-.sub_accordian {
-	position: relative;
 }
 
 .sub_accordian .show_more.button.light {
