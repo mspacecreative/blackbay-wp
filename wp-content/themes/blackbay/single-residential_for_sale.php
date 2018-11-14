@@ -57,6 +57,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					?>
 				</div>
 				
+				<!-- PROPERTY DESCRIPTION -->
+				<?php if( get_field('listing_description') ): ?>
+					<?php the_field('listing_description'); ?>
+				<?php endif; ?>
+				<!-- /PROPERTY DESCRIPTION -->
+				
 				<!-- PROPERTY OVERVIEW -->
 				<?php if( have_rows('property_details') ): ?>
 				
