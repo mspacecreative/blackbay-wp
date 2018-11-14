@@ -5,7 +5,7 @@ $(function () {
 	    if ($(this).find('tr').length > max) {
 	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td></tr>');
 	        $('.sub_accordian').click( function(){
-	            $(this).siblings(':gt('+max+')').toggle();
+	            $(this).siblings(':gt('+max+')').slideToggle();
 	            if ( $('.show_more').length ) {
 	                $(this).html('<div class="show_less button light"><a href="javascript:void(0);">View Less</a></div>');
 	            } else {
