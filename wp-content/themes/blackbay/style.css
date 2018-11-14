@@ -1456,6 +1456,7 @@ p:last-of-type {
 	background-position: top right;
 	background-attachment: scroll;
 	top: 0;
+	background-repeat: no-repeat;
 }
 
 #main-content {
