@@ -665,10 +665,10 @@ html .et_pb_section, html .et_pb_row {
 }
 
 .line-rule-right:before {
-	background: #ddd;
+	background: #333;
 	content: "";
 	display: block;
-	height: 1px;
+	height: 2px;
 	position: absolute;
 	top: 50%;
 	width: 100%;
