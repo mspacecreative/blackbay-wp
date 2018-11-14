@@ -943,6 +943,10 @@ table.bullet-box tr:last-of-type div.button {
 	margin-top: 10px;
 }
 
+table.bullet-box tr:last-of-type td {
+	padding: 0;
+}
+
 table.bullet-box td {
 	padding: 15px 20px;
 	vertical-align: middle;
