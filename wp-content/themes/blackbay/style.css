@@ -933,11 +933,6 @@ table.bullet-box {
 
 table.bullet-box tr {
 	border-bottom: 1px solid #e9e9e9;
-	display: none;
-}
-
-table.bullet-box tr:nth-child(1), table.bullet-box tr:nth-child(2), table.bullet-box tr:nth-child(3), table.bullet-box tr:nth-child(4), table.bullet-box tr:nth-child(5) {
-	display: table-row;
 }
 
 table.bullet-box td {
