@@ -1,7 +1,7 @@
 $(function () {
 	
 	$('table.bullet-box').each(function(){
-	    var max = 3
+	    var max = 4
 	    if ($(this).find('tr').length > max) {
 	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td></tr>');
 	        $('.sub_accordian').click( function(){
