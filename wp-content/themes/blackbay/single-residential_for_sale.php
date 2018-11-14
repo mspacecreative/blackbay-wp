@@ -88,18 +88,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					<div class="one_half last" style="margin-top: 20px;">
 						
 						<!-- UNIT INFO -->
-						<div class="unit-info-box">
-							<h3><?php _e('Monthly Unit Costs'); ?></h3>
-							<ul>
-								<?php if( have_rows('unit_features') ):
-								
-								 	while ( have_rows('unit_features') ) : the_row(); ?>
-								 	
-								<li><?php the_sub_field('unit_list'); ?></li>
-								
-								<?php endwhile; else : endif; ?>
-							</ul>
-						</div>
+						<?php if( have_rows('unit_features') ): ?>
+							<div class="unit-info-box">
+								<h3><?php _e('Monthly Unit Costs'); ?></h3>
+								<ul>
+									<?php while ( have_rows('unit_features') ) : the_row(); ?>
+									 	
+									<li><?php the_sub_field('unit_list'); ?></li>
+								</ul>
+							</div>
+						<?php endwhile; else : endif; ?>
 						<!-- /UNIT INFO -->
 						
 						<!-- CTA BUTTONS -->
