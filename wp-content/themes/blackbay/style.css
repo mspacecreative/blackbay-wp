@@ -1444,7 +1444,7 @@ p:last-of-type {
 	right: 0;
 	top: 0;
 	background-size: 100%!important;
-	background-position: top center;
+	background-position: top right;
 	background-attachment: scroll;
 	background-repeat: no-repeat;
 }
