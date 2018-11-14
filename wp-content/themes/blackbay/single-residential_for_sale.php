@@ -45,7 +45,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<div class="title-desc-container">
 					<h1 class="dark"><?php the_title(); ?></h1>
 					
-					<?php 
+					<!--<?php 
 					if ( have_posts() ) {
 						while ( have_posts() ) {
 							the_post();
@@ -54,7 +54,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 							
 						} // end while
 					} // end if
-					?>
+					?>-->
 				</div>
 				
 				<!-- PROPERTY DESCRIPTION -->
