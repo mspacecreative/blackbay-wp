@@ -168,7 +168,7 @@ function et_fb_backend_helpers() {
 	$modules_defaults = array(
 		'title'    => _x( 'Your Title Goes Here', 'Modules dummy content', 'et_builder' ),
 		'subtitle' => _x( 'Subtitle goes Here', 'et_builder' ),
-		'body'     => _x( 'Your content goes here. Edit or remove this text inline or in the module Content settings. You can also style every aspect of this content in the module Design settings and even apply custom CSS to this text in the module Advanced settings.',
+		'body'     => _x( '<p>Your content goes here. Edit or remove this text inline or in the module Content settings. You can also style every aspect of this content in the module Design settings and even apply custom CSS to this text in the module Advanced settings.</p>',
 			'et_builder' ),
 		'number'   => 50,
 		'button'   => _x( 'Click Here', 'Modules dummy content', 'et_builder' ),
@@ -179,6 +179,10 @@ function et_fb_backend_helpers() {
 		'video'    => 'https://www.youtube.com/watch?v=FkQuawiGWUw',
 	);
 
+	/**
+	 * ETBuilderBackend
+	 * @var array $helpers
+	 */
 	$helpers = array(
 		'debug'                        => defined( 'ET_DEBUG' ) && ET_DEBUG,
 		'autosaveInterval'             => et_builder_autosave_interval(),
@@ -186,6 +190,7 @@ function et_fb_backend_helpers() {
 		'postTitle'                    => $post_title,
 		'postStatus'                   => $post_status,
 		'postType'                     => $post_type,
+		'isCustomPostType'             => et_builder_is_post_type_custom( $post_type ) ? 'yes' : 'no',
 		'layoutType'                   => $layout_type,
 		'layoutScope'                  => $layout_scope,
 		'publishCapability'            => ( is_page() && ! current_user_can( 'publish_pages' ) ) || ( ! is_page() && ! current_user_can( 'publish_posts' ) ) ? 'no_publish' : 'publish',
@@ -245,6 +250,35 @@ function et_fb_backend_helpers() {
 				'permission'      => array( 'clone_page' ),
 			),
 		),
+		'findReplace'                  => array(
+			'groups'     => array(
+				'locations' => esc_html__( 'Locations', 'et_builder' ),
+				'elements'  => esc_html__( 'Elements', 'et_builder' ),
+			),
+			'within'     => array(
+				'locations' => array(
+					'this_page'     => esc_html__( 'This Page', 'et_builder' ),
+					'this_section'  => esc_html__( 'This Section', 'et_builder' ),
+					'this_row'      => esc_html__( 'This Row', 'et_builder' ),
+					'this_column'   => esc_html__( 'This Column', 'et_builder' ),
+				),
+				'elements' => array(
+					'this_module'   => esc_html__( 'This %s\'s Settings', 'et_builder' ),
+					'all_modules'   => esc_html__( 'All Modules', 'et_builder' ),
+					'all_rows'      => esc_html__( 'All Rows', 'et_builder' ),
+					'all_same_type' => esc_html__( 'All %s Settings', 'et_builder' ),
+				),
+			),
+			'throughout' => array(
+				'this_page'    => esc_html__( 'This Page', 'et_builder' ),
+				'this_section' => esc_html__( 'This Section', 'et_builder' ),
+				'this_row'     => esc_html__( 'This Row', 'et_builder' ),
+				'this_column'  => esc_html__( 'This Column', 'et_builder' ),
+			),
+			'all'        => array(
+				'on'           => esc_html__( 'Replace all found values within every option type, not limited to %s', 'et_builder' ),
+			),
+		),
 		'dividers'                     => ET_Builder_Module_Fields_Factory::get( 'Divider' )->dividers,
 		'moduleParentShortcodes'       => ET_Builder_Element::get_parent_slugs_regex( $post_type ),
 		'moduleChildShortcodes'        => ET_Builder_Element::get_child_slugs_regex( $post_type ),
@@ -263,6 +297,7 @@ function et_fb_backend_helpers() {
 		'commentsModuleMarkup'         => et_fb_get_comments_markup(),
 		'shortcode_tags'               => et_fb_shortcode_tags(),
 		'failureNotification'          => et_builder_get_failure_notification_modal(),
+		'noBuilderSupportNotification' => et_builder_get_no_builder_notification_modal(),
 		'exitNotification'             => et_builder_get_exit_notification_modal(),
 		'browserAutosaveNotification'  => et_builder_get_browser_autosave_notification_modal(),
 		'serverAutosaveNotification'   => et_builder_get_server_autosave_notification_modal(),
@@ -331,7 +366,7 @@ function et_fb_backend_helpers() {
 			'show_only' => array(
 				'styles_modified'   => esc_html__( 'Modified Styles', 'et_builder' ),
 				'styles_responsive' => esc_html__( 'Responsive Styles', 'et_builder' ),
-				// 'styles_hover'      => esc_html__( 'Hover Styles', 'et_builder' ), // TODO Uncomment this once the hover options feature has been released.
+				'styles_hover'      => esc_html__( 'Hover Styles', 'et_builder' ),
 				'active_content'    => esc_html__( 'Active Content', 'et_builder' ),
 			),
 		),
@@ -491,6 +526,7 @@ function et_fb_backend_helpers() {
 					'tab_slug'     => 'general',
 					'toggle_slug'  => 'background',
 					'sub_toggle'   => 'column_%s',
+					'hover'        => 'tabs',
 				),
 				'parallax_%s' => array(
 					'label'           => esc_html__( 'Column %s Parallax Effect', 'et_builder' ),
@@ -882,6 +918,7 @@ function et_fb_backend_helpers() {
 					'tab_slug'        => 'advanced',
 					'toggle_slug'     => 'margin_padding',
 					'sub_toggle'      => 'column_%s',
+					'hover'           => 'tabs',
 				),
 			),
 			'css'                     => array(
@@ -910,12 +947,14 @@ function et_fb_backend_helpers() {
 					'tab_slug'        => 'custom_css',
 					'toggle_slug'     => 'custom_css',
 					'sub_toggle'      => 'column_%s',
+					'hover'           => 'tabs',
 				),
 				'custom_css_main_%s'  => array(
 					'label'           => esc_html__( 'Column %s Main Element', 'et_builder' ),
 					'tab_slug'        => 'custom_css',
 					'toggle_slug'     => 'custom_css',
 					'sub_toggle'      => 'column_%s',
+					'hover'           => 'tabs',
 				),
 				'custom_css_after_%s' => array(
 					'label'           => esc_html__( 'Column %s After', 'et_builder' ),
@@ -924,6 +963,7 @@ function et_fb_backend_helpers() {
 					'tab_slug'        => 'custom_css',
 					'toggle_slug'     => 'custom_css',
 					'sub_toggle'      => 'column_%s',
+					'hover'           => 'tabs',
 				),
 
 			),
@@ -971,6 +1011,9 @@ function et_fb_backend_helpers() {
 			'minuteShort' => esc_html__( 'Min', 'et_builder' ),
 			'secondFull'  => esc_html__( 'Second(s)', 'et_builder' ),
 			'secondShort' => esc_html__( 'Sec', 'et_builder' ),
+		),
+		'customCss' => array(
+			'label'       => esc_html__( 'Custom CSS', 'et_builder' ),
 		),
 		'signup' => array(
 			'firstName'    => esc_attr__( 'First Name', 'et_builder' ),
@@ -1191,6 +1234,10 @@ function et_fb_backend_helpers() {
 				'design'               => esc_html__( 'Design', 'et_builder' ),
 				'advanced'             => esc_html__( 'Design', 'et_builder' ),
 				'css'                  => esc_html__( 'Advanced', 'et_builder' ),
+				'desktop'              => esc_html__( 'Desktop', 'et_builder' ),
+				'tablet'               => esc_html__( 'Tablet', 'et_builder' ),
+				'phone'                => esc_html__( 'Phone', 'et_builder' ),
+				'hover'                => esc_html__( 'Hover', 'et_builder' ),
 			),
 			'additionalButton'         => array(
 				'changeApiKey'         => esc_html__( 'Change API Key', 'et_builder' ),
@@ -1219,6 +1266,12 @@ function et_fb_backend_helpers() {
 				'roll'   => esc_html__( 'Roll', 'et_builder' ),
 			),
 			'cssText'                  => esc_html__( 'CSS', 'et_builder'),
+			'hoverOptions'             => array(
+				'default' => esc_html__( 'Default', 'et_builder' ),
+				'hover'   => esc_html__( 'Hover', 'et_builder' ),
+				'tablet'  => esc_html__( 'Tablet', 'et_builder' ),
+				'phone'   => esc_html__( 'Phone', 'et_builder' ),
+			),
 			'background'               => array(
 				'addColor'       => esc_html__( 'Add Background Color', 'et_builder' ),
 				'addGradient'    => esc_html__( 'Add Background Gradient', 'et_builder' ),
@@ -1233,21 +1286,27 @@ function et_fb_backend_helpers() {
 			'responsiveTabs' => array(
 				'desktop' => esc_html__( 'Desktop', 'et_builder' ),
 				'tablet'  => esc_html__( 'Tablet', 'et_builder' ),
-				'phone'   => esc_html__( 'Smartphone', 'et_builder' ),
+				'phone'   => esc_html__( 'Phone', 'et_builder' ),
 			),
+			'element'                  => esc_html__( 'Element', 'et_builder' ),
 		),
 		'rightClickMenuItems' => array(
 			'undo'            => esc_html__( 'Undo', 'et_builder' ),
 			'redo'            => esc_html__( 'Redo', 'et_builder' ),
 			'lock'            => esc_html__( 'Lock', 'et_builder' ),
+			'lock_items'      => esc_html__( 'Lock', 'et_builder' ),
 			'unlock'          => esc_html__( 'Unlock', 'et_builder' ),
 			'copy'            => esc_html__( 'Copy', 'et_builder' ),
+			'copy_items'      => esc_html__( 'Copy Elements', 'et_builder' ),
 			'paste'           => esc_html__( 'Paste', 'et_builder' ),
+			'paste_items'     => esc_html__( 'Paste Elements', 'et_builder' ),
 			'reset'           => esc_html__( 'Reset', 'et_builder' ),
+			'reset_styles'    => esc_html__( 'Reset Styles', 'et_builder' ),
 			'styles'          => esc_html__( 'Styles', 'et_builder' ),
 			'copyStyle'       => esc_html__( 'Copy Style', 'et_builder' ),
 			'pasteStyle'      => esc_html__( 'Paste Style', 'et_builder' ),
 			'disable'         => esc_html__( 'Disable', 'et_builder' ),
+			'disable_items'   => esc_html__( 'Disable', 'et_builder' ),
 			'enable'          => esc_html__( 'Enable', 'et_builder' ),
 			'save'            => esc_html__( 'Save to Library', 'et_builder' ),
 			'startABTesting'  => esc_html__( 'Split Test', 'et_builder' ),
@@ -1256,6 +1315,9 @@ function et_fb_backend_helpers() {
 				'module'      => esc_html__( 'Module', 'et_builder' ),
 				'row'         => esc_html__( 'Row', 'et_builder' ),
 				'section'     => esc_html__( 'Section', 'et_builder' ),
+				'modules'     => esc_html__( 'Modules', 'et_builder' ),
+				'rows'        => esc_html__( 'Rows', 'et_builder' ),
+				'sections'    => esc_html__( 'Sections', 'et_builder' ),
 			),
 			'disableGlobal'   => esc_html__( 'Disable Global', 'et_builder' ),
 			'collapse'        => esc_html__( 'Collapse', 'et_builder' ),
@@ -1266,6 +1328,12 @@ function et_fb_backend_helpers() {
 			'option'          => esc_html__( 'Option', 'et_builder' ),
 			'item'            => esc_html__( 'Item', 'et_builder' ),
 			'go_to_option'    => esc_html__( 'Go To Option', 'et_builder' ),
+			'find_replace'    => esc_html__( 'Find & Replace', 'et_builder' ),
+			'extend_styles'   => array(
+				'module'        => esc_html__( 'Extend %s Styles', 'et_builder' ),
+				'options_group' => esc_html__( 'Extend %s Styles', 'et_builder' ),
+				'option'        => esc_html__( 'Extend %s', 'et_builder' ),
+			),
 		),
 		'tooltips'            => array(
 			'insertModule'     => esc_html__( 'Insert Module', 'et_builder' ),
@@ -1345,6 +1413,42 @@ function et_fb_backend_helpers() {
 			'show_only'             => esc_html__( 'Show Only', 'et_builder' ),
 			'filterNotice'          => esc_html__( 'No options exist for this search query. Click here to clear your search filters.', 'et_builder' ),
 			'filterNoticeClickable' => esc_html__( 'Click here', 'et_builder' ),
+			'extend_styles'         => array(
+				'title'   => esc_html__( 'Extend Styles', 'et_builder' ),
+				'button'  => esc_html__( 'Extend', 'et_builder' ),
+				'options' => array(
+					'to'         => array(
+						'containers' => array(),
+						'modules'    => array(
+							'module' => esc_html__( 'All Modules', 'et_builder' ),
+						),
+					),
+					'throughout' => array(
+						'page'    => esc_html__( 'This Page', 'et_builder' ),
+						'section' => esc_html__( 'This Section', 'et_builder' ),
+						'row'     => esc_html__( 'This Row', 'et_builder' ),
+						'column'  => esc_html__( 'This Column', 'et_builder' ),
+					),
+				),
+				'groups' => array(
+					'to' => array(
+						'containers' => esc_html__( 'Containers', 'et_builder' ),
+						'modules'    => esc_html__( 'Modules', 'et_builder' ),
+					),
+				),
+				'labels' => array(
+					'to'                   => esc_html__( 'To', 'et_builder' ),
+					'throughout'           => esc_html__( 'Throughout', 'et_builder' ),
+					// translators: %s is Plural Module Name.
+					'all'                  => esc_html__( 'All %s', 'et_builder' ),
+					// translators: %1$s is Module Name, %2$s is Plural Module Name.
+					'extend_module'        => esc_html__( 'Extend This %1$s\'s Styles To All %2$s', 'et_builder' ),
+					// translators: %s is Options Group Name.
+					'extend_options_group' => esc_html__( 'Extend This %s\'s Styles', 'et_builder' ),
+					// translators: %s is option Field Name.
+					'extend_option'        => esc_html__( 'Extend This %s', 'et_builder' ),
+				),
+			),
 		),
 		'selectControl' => array(
 			'typeToSearch' => esc_html__( 'Start Typing', 'et_builder' ),
@@ -1361,6 +1465,39 @@ function et_fb_backend_helpers() {
 				),
 			),
 			'meta' => et_pb_history_localization(),
+			'elements' => esc_html__( 'Elements', 'et_builder' ),
+		),
+		'findReplace' => array(
+			'modal' => array(
+				'title'       => esc_html__( 'Find & Replace', 'et_builder' ),
+				'tooltip'     => esc_html__( 'Replace', 'et_builder' ),
+				'find'        => array(
+					'label'       => esc_html__( 'Find This %s', 'et_builder' ),
+					'description' => esc_html__( 'The is the option value that will be replaced throughout your page. Where this option exists, within the defined scope, it will be replaced by the new value configured below.', 'et_builder' ),
+				),
+				'within'      => array(
+					'label'       => esc_html__( 'Within', 'et_builder' ),
+					'description' => esc_html__( 'The value will only be replaced within the confines of the area selected here. You can replace the value across your entire page, or you can replace the value only within specific parts of your page or within specific modules.', 'et_builder' ),
+				),
+				'throughout'  => array(
+					'label'       => esc_html__( 'Throughout', 'et_builder' ),
+					'description' => esc_html__( 'The value will only be replaced inside of modules that exist within the area selected here. You can replace the value across your entire page, or you can replace the value only within specific parts of your page.', 'et_builder' ),
+				),
+				'replaceWith' => array(
+					'label'       => esc_html__( 'Replace With', 'et_builder' ),
+					'description' => esc_html__( 'When the value above is found within your desired area, it will be replaced with the value that you choose here.', 'et_builder' ),
+				),
+				'replaceAll'  => array(
+					'label'       => esc_html__( 'Replace All', 'et_builder' ),
+					'description' => esc_html__( 'By default, values will only be replaced when found within the exact option type selected. If you enable this checkbox, the search will be extended to all options and values will be replaced everywhere. For example, a color will be replaced in all colors options: Text Colors, Background Colors, Border Colors, etc.', 'et_builder' ),
+				),
+				'error'       => array(
+					'field_type_not_match'    => esc_html__( 'Field type is not match', 'et_builder' ),
+					'field_name_not_match'    => esc_html__( 'Field name is not match', 'et_builder' ),
+					'replace_value_not_valid' => esc_html__( 'Replace value is not valid', 'et_builder' ),
+					'replace_value_not_match' => esc_html__( 'Replace value is not match', 'et_builder' ),
+				),
+			),
 		),
 		'help' => array(
 			'modal' => array(
@@ -1421,6 +1558,41 @@ function et_fb_backend_helpers() {
 			'all'            => esc_html__( 'All', 'et_builder' ),
 
 		),
+
+		// Drag and Droploader
+		'droploader' => array(
+			'title' => esc_html__('Drop Files Here To Upload', 'et_builder'),
+			'description' => esc_html__('Drop %s files here to automatically generate website content', 'et_builder'),
+			'allowed_extensions' => esc_html__( 'Only the following file formats are allowed: %s', 'et_builder' ),
+			'errors'             => array(
+				'uploadFailed'          => array(
+					'title'             => esc_html__( 'Upload Failed', 'et_builder' ),
+					'buttonCancelLabel' => esc_html__( 'Close', 'et_builder' ),
+				),
+				'file_name_empty'       => esc_html__( 'Uploaded file name is empty', 'et_builder' ),
+				'file_size_empty'       => esc_html__( 'Uploaded file size is empty: %s', 'et_builder' ),
+				'file_type_empty'       => esc_html__( 'Uploaded file type is empty: %s', 'et_builder' ),
+				'file_extension_empty'  => esc_html__( 'Uploaded file extension is empty: %s', 'et_builder' ),
+				'file_type_not_allowed' => esc_html__( 'Uploaded file type is not allowed: %s', 'et_builder' ),
+				'file_type_unknown'     => esc_html__( 'Uploaded file type is unknown', 'et_builder' ),
+				'file_content_invalid'  => esc_html__( 'Uploaded file content is invalid: %s', 'et_builder' ),
+				'file_untrusted'        => esc_html__( 'File is untrusted: %s', 'et_builder' ),
+				'action_not_allowed'    => esc_html__( 'You are not allowed to perform this action', 'et_builder' ),
+			),
+			'fileTypes'          => array(
+				'names' => array(
+					'audio' => esc_html__( 'Audio', 'et_builder' ),
+					'html'  => esc_html__( 'HTML', 'et_builder' ),
+					'css'   => esc_html__( 'CSS', 'et_builder' ),
+					'font'  => esc_html__( 'Font', 'et_builder' ),
+					'image' => esc_html__( 'Image', 'et_builder' ),
+					'json'  => esc_html__( 'JSON', 'et_builder' ),
+					'text'  => esc_html__( 'Text', 'et_builder' ),
+					'video' => esc_html__( 'Video', 'et_builder' ),
+				),
+			),
+		),
+
 		'app' => array(
 			'modal' => array(
 				'title'  => esc_html__( 'Builder Settings', 'et_builder' ),
@@ -1515,7 +1687,7 @@ function et_fb_backend_helpers() {
 			'section_only_row_dragged_away'            => esc_html__( 'The section should have at least one row.', 'et_builder' ),
 			'global_module_alert'                      => esc_html__( 'You cannot add global modules into global sections or rows', 'et_builder' ),
 			'cannot_move_module_goal_out_from_subject' => esc_html__( 'Once set, a goal that has been placed inside a split testing subject cannot be moved outside the split testing subject. You can end your split test and start a new one if you would like to make this change.', 'et_builder' ),
-			'stop_dropping_3_col_row'                  => esc_html__( '3 column row can\'t be used in this column.', 'et_builder' ),
+			'stop_dropping_3_col_row'                  => esc_html__( "This number of columns can't be used on this row.", 'et_builder' ),
 		),
 		'tooltip' => array(
 			'pageSettingsBar' => array(
@@ -1557,6 +1729,7 @@ function et_fb_backend_helpers() {
 				'undo'          => esc_html__( 'Undo', 'et_builder' ),
 				'cancel'        => esc_html__( 'Discard All Changes', 'et_builder' ),
 				'save'          => esc_html__( 'Save Changes', 'et_builder' ),
+				'close'         => esc_html__( 'Close', 'et_builder' ),
 			),
 			'inlineEditor' => array(
 				'back'             => esc_html__( 'Go Back', 'et_builder' ),
@@ -1647,6 +1820,15 @@ function et_fb_backend_helpers() {
 			),
 			'unsupportedFieldType' => esc_html__( 'The above custom field is not fully supported and has been rendered as a standard input.' ),
 		),
+
+		'dynamicContent' => array(
+			'invalidField' => esc_html__( 'Invalid field or insufficient permissions.', 'et_builder' ),
+			'tooltips' => array(
+				'enable' => esc_html__( 'Use Dynamic Content', 'et_builder' ),
+				'disable' => esc_html__( 'Remove Dynamic Content', 'et_builder' ),
+				'settings' => esc_html__( 'Edit Dynamic Content', 'et_builder' ),
+			),
+		),
 	);
 
 	// Add strings from i18n directory. Note: We don't handle subdirectories, but we should in the future.
@@ -1657,6 +1839,8 @@ function et_fb_backend_helpers() {
 
 		$helpers['i18n'][ $key ] = require $file;
 	}
+
+	$helpers['dynamicContentFields'] = et_builder_get_dynamic_content_fields( $post_id, 'edit' );
 
 	// Pass helpers via localization.
 	wp_localize_script( 'et-frontend-builder', 'ETBuilderBackend', $helpers );
