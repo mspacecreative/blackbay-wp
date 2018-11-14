@@ -20,9 +20,9 @@ $(function () {
 		// VIEW MORE DETAILS BUTTON
 		$('.view-more').click(function() {
 			if ($(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').css('display', 'none') == true) {
-				$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideDown();
+				$(this).slideUp();
 			} else {
-				$(this).parent().parent().siblings('.bullet-box').children('tbody').children('tr').slideUp();
+				$(this).slideDown();
 			}
 		});
 		
