@@ -1453,7 +1453,6 @@ p:last-of-type {
 	position: absolute;
 	z-index: 1;
 	width: 100%;
-	background-size: cover!important;
 	background-position: top right;
 	background-attachment: scroll;
 	top: 0;
@@ -1775,6 +1774,6 @@ article h1 {
 
 @media (min-width: 1600px) {
 	.featured-bg-img {
-		background-size: 50%;
+		background-size: 50%!important;
 	}
 }
