@@ -1773,11 +1773,8 @@ article h1 {
 }
 }
 
-/*@media (min-width: 1600px) {
-
-.version-3 header {
-	max-width: 1600px;
-	left: 50%;
-	transform: translateX(-50%);
+@media (min-width: 1600px) {
+	.featured-bg-img {
+		background-size: 50%;
+	}
 }
-}*/
