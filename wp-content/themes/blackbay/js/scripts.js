@@ -1,5 +1,11 @@
 $(function () {
 
+	// VIEW MORE DETAILS BUTTON
+	$('.view-more').click(function(e) {
+		e.preventDefault;
+		$(this).parent().prev('.bullet-box').toggleClass('reveal');
+	});
+	
 	// FIX SUB MENU ITEM
 	$('.mobile-nav li.menu-item-has-children').removeClass('menu-item-has-children');
 	
