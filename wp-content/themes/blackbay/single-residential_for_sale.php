@@ -61,19 +61,21 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<?php if( have_rows('property_details') ): ?>
 				
 				<h3 class="line-rule-right"><span>Property Details</span></h3>
-				<div class="bullet-box">
-					<ul>
+				<table cellpadding="0" cellspacing="0" border="0" class="bullet-box">
+					<tr>
 						<?php while ( have_rows('property_details') ) : the_row(); ?>
 						 	
-						 	<li>
+						 	<td>
 						 		<span style="font-weight: bold;"><?php the_sub_field('detail_label'); ?><?php _e(': '); ?>
 						 		</span>
+						 	</td>
+						 	<td>
 						 		<?php the_sub_field('detail_description'); ?>
-						 	</li>
+						 	</td>
 						
 						<?php endwhile; ?>
-					</ul>
-				</div>
+					</tr>
+				</table>
 				<?php else : endif; ?>
 				<!-- /PROPERTY OVERVIEW -->
 				
