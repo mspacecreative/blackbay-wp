@@ -936,7 +936,7 @@ table.bullet-box tr {
 }
 
 table.bullet-box td {
-	padding: 20px;
+	padding: 15px 20px;
 	vertical-align: middle;
 	line-height: 1.25em;
 }
