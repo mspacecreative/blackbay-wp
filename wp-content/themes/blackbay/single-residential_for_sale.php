@@ -57,66 +57,35 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					?>
 				</div>
 				
-				<!-- CLEARFIX -->
-				<div class="clearfix">
-				
-				<!-- BUILDING FEATURES -->
-				<?php if( have_rows('building_features') ): ?>
+				<!-- PROPERTY OVERVIEW -->
+				<?php if( have_rows('property_details') ): ?>
 				
 				<h3 class="line-rule-right"><span>Property Details</span></h3>
-				<!-- /BUILDING FEATURES -->
-					
-					<!-- ONE HALF -->
-					<div class="one_half" style="margin-top: 20px;">
+				<div class="bullet-box">
+					<ul>
+						<?php while ( have_rows('property_details') ) : the_row(); ?>
+						 	
+						 	<li>
+						 		<span style="font-weight: bold;"><?php the_sub_field('detail_label'); ?><?php _e(': '); ?>
+						 		</span>
+						 		<?php the_sub_field('detail_description'); ?>
+						 	</li>
 						
-						<!-- BULLET BOX -->
-						<div class="bullet-box">
-							<ul>
-								<?php while ( have_rows('building_features') ) : the_row(); ?>
-								 	
-								<li><?php the_sub_field('features_list'); ?></li>
-								
-								<?php endwhile; ?>
-							</ul>
-						</div>
-						<!-- END BULLET BOX -->
-						
-					</div>
-					<!-- END ONE HALF -->
-					
-					<!-- ONE HALF -->
-					<div class="one_half last" style="margin-top: 20px;">
-						
-						<!-- UNIT INFO -->
-						<?php if( have_rows('unit_features') ): ?>
-							<div class="unit-info-box">
-								<h3><?php _e('Monthly Unit Costs'); ?></h3>
-								<ul>
-									<?php while ( have_rows('unit_features') ) : the_row(); ?>
-									 	
-									<li><?php the_sub_field('unit_list'); ?></li>
-								</ul>
-							</div>
-						<?php endwhile; else : endif; ?>
-						<!-- /UNIT INFO -->
-						
-						<!-- CTA BUTTONS -->
-						<?php if( have_rows('external_links') ): ?>
-							<?php while ( have_rows('external_links') ) : the_row(); ?>
-								<div class="button light">
-									<a href="<?php the_sub_field('external_link_url'); ?>" target="_blank"><?php the_sub_field('external_link_label'); ?></a>
-								</div>
-							<?php endwhile; else : 
-						endif; ?>
-						<!-- END CTA BUTTONS -->
-						
-					</div>
-					<!-- END ONE HALF -->
-					
+						<?php endwhile; ?>
+					</ul>
 				</div>
-				<!-- END CLEARFIX -->
-				
 				<?php else : endif; ?>
+				<!-- /PROPERTY OVERVIEW -->
+				
+				<!-- CTA BUTTONS -->
+				<?php if( have_rows('external_links') ): ?>
+					<?php while ( have_rows('external_links') ) : the_row(); ?>
+						<div class="button light">
+							<a href="<?php the_sub_field('external_link_url'); ?>" target="_blank"><?php the_sub_field('external_link_label'); ?></a>
+						</div>
+					<?php endwhile; else : 
+				endif; ?>
+				<!-- END CTA BUTTONS -->
 				
 				<!-- PAGINATION -->
 				<div class="post-navigation clear">
