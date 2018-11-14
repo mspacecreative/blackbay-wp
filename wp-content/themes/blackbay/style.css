@@ -944,6 +944,7 @@ table.bullet-box td {
 	padding: 15px 20px;
 	vertical-align: middle;
 	line-height: 1.25em;
+	width: 50%;
 }
 
 .unit-info-box {
