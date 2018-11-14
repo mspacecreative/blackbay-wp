@@ -104,7 +104,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						<?php if( have_rows('external_links') ): ?>
 							<?php while ( have_rows('external_links') ) : the_row(); ?>
 								<div class="button light">
-									<a href="<?php the_field('external_link_url'); ?>" target="_blank"><?php the_field('external_link_label'); ?></a>
+									<a href="<?php the_sub_field('external_link_url'); ?>" target="_blank"><?php the_sub_field('external_link_label'); ?></a>
 								</div>
 							<?php endwhile; else : 
 						endif; ?>
