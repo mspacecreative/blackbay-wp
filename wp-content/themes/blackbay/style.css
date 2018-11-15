@@ -1287,16 +1287,6 @@ p:last-of-type {
 	background-position: top right 25%!important;
 }
 
-#main-content:before {
-	position: absolute;
-	background: rgba(150, 100, 0, .75);
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	content: '';
-}
-
 .fw-container:before {
 	display: none;
 }
@@ -1472,6 +1462,16 @@ p:last-of-type {
 #main-content {
 	position: relative;
 	height: 100%;
+}
+
+#main-content:before {
+	position: absolute;
+	background: rgba(150, 100, 0, .75);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	content: '';
 }
 
 .bevel-overlay img {
