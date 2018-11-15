@@ -1471,7 +1471,7 @@ p:last-of-type {
 	height: 100%;
 }
 
-.single #main-content:before {
+/*.single #main-content:before {
 	position: absolute;
 	background: rgba(150, 100, 0, .75);
 	top: 0;
@@ -1480,7 +1480,7 @@ p:last-of-type {
 	height: 100%;
 	content: '';
 	z-index: 1;
-}
+}*/
 
 .bevel-overlay img {
 	max-width: none;
