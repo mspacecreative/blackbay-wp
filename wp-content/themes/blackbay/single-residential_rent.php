@@ -69,7 +69,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 						
 						<!-- BULLET BOX -->
 						<div class="bullet-box">
-							<ul>
+							<ul class="features">
 								<?php if( have_rows('building_features') ):
 								
 								 	while ( have_rows('building_features') ) : the_row(); ?>

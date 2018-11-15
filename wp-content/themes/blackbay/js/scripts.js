@@ -1,5 +1,36 @@
 $(function () {
 	
+	// TWO COLUMN LAYOUT FOR BUILDING FEATURES
+	var postsArr = new Array(),
+	    $postsList = $('ul.features');
+	
+	//Create array of all posts in lists
+	$postsList.find('li').each(function(){
+	    postsArr.push($(this).html());
+	})
+	
+	//Split the array at this point. The original array is altered.
+	var firstList = postsArr.splice(0, Math.round(postsArr.length / 2)),
+	    secondList = postsArr,
+	    ListHTML = '';
+	
+	function createHTML(list){
+	    ListHTML = '';
+	    for (var i = 0; i < list.length; i++) {
+	        ListHTML += '<li>' + list[i] + '</li>'
+	    };
+	}
+	
+	//Generate HTML for first list
+	createHTML(firstList);
+	$postsList.html(ListHTML);
+	
+	//Generate HTML for second list
+	createHTML(secondList);
+	//Create new list after original one
+	$postsList.after('<ul class="features"></ul>').next().html(ListHTML);
+	
+	// TRUNCATE PROPERTY DETAILS
 	$('table.bullet-box').each(function(){
 	    var max = 4
 	    if ($(this).find('tr').length > max) {
