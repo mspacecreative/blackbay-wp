@@ -1472,6 +1472,10 @@ p:last-of-type {
 	height: 100%;
 }
 
+.single .left-content {
+	padding-bottom: 0;
+}
+
 /*.single #main-content:before {
 	position: absolute;
 	background: rgba(150, 100, 0, .75);
