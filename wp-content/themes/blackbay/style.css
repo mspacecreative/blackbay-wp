@@ -1294,6 +1294,7 @@ p:last-of-type {
 	right: 0;
 	width: 100%;
 	height: 100%;
+	content: '';
 }
 
 .fw-container:before {
