@@ -57,67 +57,49 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 					?>
 				</div>
 				
-				<!-- CLEARFIX -->
-				<div class="clearfix">
-				
 				<!-- BUILDING FEATURES -->
 				<h3 class="line-rule-right"><span>Building Features</span></h3>
 				<!-- /BUILDING FEATURES -->
 					
-					<!-- ONE HALF -->
-					<div class="one_half" style="margin-top: 20px;">
+				<!-- BULLET BOX -->
+				<div class="bullet-box clearfix">
+					<ul class="features">
+						<?php if( have_rows('building_features') ):
 						
-						<!-- BULLET BOX -->
-						<div class="bullet-box">
-							<ul class="features">
-								<?php if( have_rows('building_features') ):
-								
-								 	while ( have_rows('building_features') ) : the_row(); ?>
-								 	
-								<li><?php the_sub_field('features_list'); ?></li>
-								
-								<?php endwhile; else : endif; ?>
-							</ul>
-						</div>
-						<!-- END BULLET BOX -->
+						 	while ( have_rows('building_features') ) : the_row(); ?>
+						 	
+						<li><?php the_sub_field('features_list'); ?></li>
 						
-					</div>
-					<!-- END ONE HALF -->
-					
-					<!-- ONE HALF -->
-					<div class="one_half last" style="margin-top: 20px;">
-						
-						<!-- UNIT INFO -->
-						<div class="unit-info-box">
-							<h3><?php _e('Monthly Unit Costs'); ?></h3>
-							<ul>
-								<?php if( have_rows('unit_features') ):
-								
-								 	while ( have_rows('unit_features') ) : the_row(); ?>
-								 	
-								<li><?php the_sub_field('unit_list'); ?></li>
-								
-								<?php endwhile; else : endif; ?>
-							</ul>
-						</div>
-						<!-- /UNIT INFO -->
-						
-						<!-- CTA BUTTONS -->
-						<div class="button light cta-button">
-							<a href="http://localhost/blackbay-wp/contact-blackbay/tenant-rental-application/">Landlord Reference</a>
-						</div>
-						<div class="button light">
-							<?php if( get_field('more_info_button') ): ?>
-							<a href="<?php the_field('more_info_button'); ?>" target="_blank">More Information</a>
-							<?php endif; ?>
-						</div>
-						<!-- END CTA BUTTONS -->
-						
-					</div>
-					<!-- END ONE HALF -->
-					
+						<?php endwhile; else : endif; ?>
+					</ul>
 				</div>
-				<!-- END CLEARFIX -->
+				<!-- END BULLET BOX -->
+					
+				<!-- UNIT INFO -->
+				<div class="unit-info-box">
+					<h3><?php _e('Monthly Unit Costs'); ?></h3>
+					<ul>
+						<?php if( have_rows('unit_features') ):
+						
+						 	while ( have_rows('unit_features') ) : the_row(); ?>
+						 	
+						<li><?php the_sub_field('unit_list'); ?></li>
+						
+						<?php endwhile; else : endif; ?>
+					</ul>
+				</div>
+				<!-- /UNIT INFO -->
+				
+				<!-- CTA BUTTONS -->
+				<div class="button light cta-button">
+					<a href="http://localhost/blackbay-wp/contact-blackbay/tenant-rental-application/">Landlord Reference</a>
+				</div>
+				<div class="button light">
+					<?php if( get_field('more_info_button') ): ?>
+					<a href="<?php the_field('more_info_button'); ?>" target="_blank">More Information</a>
+					<?php endif; ?>
+				</div>
+				<!-- END CTA BUTTONS -->
 				
 				<!-- PAGINATION -->
 				<div class="post-navigation clear">
