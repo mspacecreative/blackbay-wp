@@ -1433,7 +1433,7 @@ p:last-of-type {
 	margin: 25px 0 0;
 }
 
-.features {
+.features ul {
 	float: left;
 }
 
