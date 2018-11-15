@@ -1330,7 +1330,7 @@ p:last-of-type {
 .photo-gallery, .google-map {
 	height: 300px!important;
 }
-.photo-gallery {
+.photo-gallery.slick-dotted.slick-slider {
 	margin-top: 25px;
 }
 }
