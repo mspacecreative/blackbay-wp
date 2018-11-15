@@ -1443,6 +1443,11 @@ p:last-of-type {
 	margin-bottom: 0;
 }
 
+.unit-info-box ul li {
+	display: inline-block;
+	margin-right: 25px;
+}
+
 .features ul:last-of-type {
 	margin-right: 0;
 }
