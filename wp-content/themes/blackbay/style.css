@@ -855,6 +855,10 @@ img {
 }
 
 .slick-track, .slick-list {
+	height: 100%;
+}
+
+.photo-gallery .slick-track, .slick-list {
 	height: auto!important;
 }
 
