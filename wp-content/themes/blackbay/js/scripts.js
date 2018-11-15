@@ -34,34 +34,42 @@ $(function () {
 	$(document).ready(function () {
 		
 		// TWO COLUMN LAYOUT FOR BUILDING FEATURES
-		var postsArr = new Array(),
-		    $postsList = $('ul.features');
+		$.fn.extend(
+		    {
+		        list2Columns: function(numCols)
+		        {
+		            var listItems = $(this).find('li'); /* get the list data */
+		            var listHeader = $(this);
+		            var numListItems = listItems.length;
+		            var numItemsPerCol = Math.ceil(numListItems / numCols); /* divide by the number of columns requires */
+		            var currentColNum = 1, currentItemNumber = 1, returnHtml = '', i = 0;
+		    
+		    
+		            /* append the columns */
+		            for (i=1;i<=numCols;i++)
+		            {
+		                $(this).parent().append('<ul class="features list-column-' + i + '"></ul>');
+		            }
 		
-		//Create array of all posts in lists
-		$postsList.find('li').each(function(){
-		    postsArr.push($(this).html());
-		})
+		            /* append the items to the columns */
+		            $.each(listItems, function (i, v)
+		            {    
+		                if (currentItemNumber <= numItemsPerCol){
+		                    currentItemNumber ++;
+		                }
+		                else
+		                {
+		                    currentItemNumber = 1;
+		                    currentColNum ++;
+		                }
+		                    $('.list-column-'+currentColNum).append(v);
+		            });
+		            $(this).remove(); /*clean previous content */
+		        }
+		    });
 		
-		//Split the array at this point. The original array is altered.
-		var firstList = postsArr.splice(0, Math.round(postsArr.length / 2)),
-		    secondList = postsArr,
-		    ListHTML = '';
 		
-		function createHTML(list){
-		    ListHTML = '';
-		    for (var i = 0; i < list.length; i++) {
-		        ListHTML += '<li>' + list[i] + '</li>'
-		    };
-		}
-		
-		//Generate HTML for first list
-		createHTML(firstList);
-		$postsList.html(ListHTML);
-		
-		//Generate HTML for second list
-		createHTML(secondList);
-		//Create new list after original one
-		$postsList.after('<ul class="features"></ul>').next().html(ListHTML);
+		$('ul').list2Columns(2);
 		
 		// VIEW MORE DETAILS BUTTON
 		/*$('.view-more').click(function() {
