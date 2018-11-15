@@ -1433,6 +1433,9 @@ p:last-of-type {
 	float: left;
 	width: 49%;
 	margin-right: 2%;
+}
+
+.features ul, .unit-info-box ul {
 	padding-left: 14px;
 }
 
