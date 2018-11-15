@@ -1439,6 +1439,10 @@ p:last-of-type {
 	padding-left: 14px;
 }
 
+.unit-info-box ul li:last-of-type {
+	margin-bottom: 0;
+}
+
 .features ul:last-of-type {
 	margin-right: 0;
 }
