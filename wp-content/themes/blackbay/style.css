@@ -855,7 +855,7 @@ img {
 }
 
 .slick-track, .slick-list {
-	height: 100%;
+	height: auto!important;
 }
 
 #index {
