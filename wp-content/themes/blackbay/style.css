@@ -1278,6 +1278,11 @@ p:last-of-type {
 	background-position: top right 25%!important;
 }
 
+.bevel-overlay img {
+	max-width: 25%;
+	height: auto;
+}
+
 .fw-container:before {
 	display: none;
 }
