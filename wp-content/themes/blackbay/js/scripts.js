@@ -34,42 +34,35 @@ $(function () {
 	$(document).ready(function () {
 		
 		// TWO COLUMN LAYOUT FOR BUILDING FEATURES
-		$.fn.extend(
-		    {
-		        list2Columns: function(numCols)
-		        {
-		            var listItems = $(this).find('li'); /* get the list data */
-		            var listHeader = $(this);
-		            var numListItems = listItems.length;
-		            var numItemsPerCol = Math.ceil(numListItems / numCols); /* divide by the number of columns requires */
-		            var currentColNum = 1, currentItemNumber = 1, returnHtml = '', i = 0;
-		    
-		    
-		            /* append the columns */
-		            for (i=1;i<=numCols;i++)
-		            {
-		                $(this).parent().append('<ul class="features list-column-' + i + '"></ul>');
+		$(function($) {
+		    var num_cols = 2,
+		    container = $('.features'),
+		    listItem = 'li',
+		    listClass = 'sub-list';
+		    container.each(function() {
+		        var items_per_col = new Array(),
+		        items = $(this).find(listItem),
+		        min_items_per_col = Math.floor(items.length / num_cols),
+		        difference = items.length - (min_items_per_col * num_cols);
+		        for (var i = 0; i < num_cols; i++) {
+		            if (i < difference) {
+		                items_per_col[i] = min_items_per_col + 1;
+		            } else {
+		                items_per_col[i] = min_items_per_col;
 		            }
-		
-		            /* append the items to the columns */
-		            $.each(listItems, function (i, v)
-		            {    
-		                if (currentItemNumber <= numItemsPerCol){
-		                    currentItemNumber ++;
+		        }
+		        for (var i = 0; i < num_cols; i++) {
+		            $(this).append($('<ul ></ul>').addClass(listClass));
+		            for (var j = 0; j < items_per_col[i]; j++) {
+		                var pointer = 0;
+		                for (var k = 0; k < i; k++) {
+		                    pointer += items_per_col[k];
 		                }
-		                else
-		                {
-		                    currentItemNumber = 1;
-		                    currentColNum ++;
-		                }
-		                    $('.list-column-'+currentColNum).append(v);
-		            });
-		            $(this).remove(); /*clean previous content */
+		                $(this).find('.' + listClass).last().append(items[j + pointer]);
+		            }
 		        }
 		    });
-		
-		
-		$('ul').list2Columns(2);
+		});
 		
 		// VIEW MORE DETAILS BUTTON
 		/*$('.view-more').click(function() {
