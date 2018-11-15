@@ -102,7 +102,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<!-- END CTA BUTTONS -->
 				
 				<!-- PAGINATION -->
-				<div class="post-navigation clear">
+				<div class="post-navigation clearfix">
 					<div class="half prev-link">
 						<?php previous_post_link('%link', 'Previous'); ?>
 					</div>
