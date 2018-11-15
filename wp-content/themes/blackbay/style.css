@@ -1464,6 +1464,7 @@ p:last-of-type {
 	background-attachment: scroll;
 	top: 0;
 	background-repeat: no-repeat;
+	text-align: right;
 }
 
 #main-content {
@@ -1483,7 +1484,7 @@ p:last-of-type {
 }*/
 
 .bevel-overlay img {
-	max-width: none;
+	max-width: 25%;
 	width: 100%;
 }
 
