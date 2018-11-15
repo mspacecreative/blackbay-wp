@@ -125,6 +125,7 @@ body:hover .owl-next {
 	position: relative;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
 }
 
 .owl-dots {
