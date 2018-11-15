@@ -773,11 +773,11 @@ p.light, .light h1 {
 	width: 90%;
 }
 
-.one-half {
+/*.one-half {
 	float: left;
 	width: 48%;
 	margin-right: 4%;
-}
+}*/
 
 .one-half:last-child {
 	margin-right: 0;
@@ -1435,6 +1435,12 @@ p:last-of-type {
 
 .features ul {
 	float: left;
+	width: 49%;
+	margin-right: 2%;
+}
+
+.features ul:last-of-type {
+	margin-right: 0;
 }
 
 .post-navigation a {
