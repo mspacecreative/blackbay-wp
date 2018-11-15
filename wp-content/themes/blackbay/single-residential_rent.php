@@ -62,8 +62,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				<!-- /BUILDING FEATURES -->
 					
 				<!-- BULLET BOX -->
-				<div class="bullet-box clearfix">
-					<ul class="features">
+				<div class="bullet-box">
+					<ul class="features clearfix">
 						<?php if( have_rows('building_features') ):
 						
 						 	while ( have_rows('building_features') ) : the_row(); ?>
