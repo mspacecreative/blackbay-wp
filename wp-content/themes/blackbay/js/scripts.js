@@ -35,13 +35,13 @@ $(function () {
 	$('table.bullet-box').each(function(){
 	    var max = 4
 	    if ($(this).find('tr').length > max) {
-	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td></tr>');
+	        $(this).find('tr:gt('+max+')').hide().end().append('<tr class="sub_accordian"><td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">Show More</a></div></td></tr>');
 	        $('.sub_accordian').click( function(){
 	            $(this).siblings(':gt('+max+')').toggle();
 	            if ( $('.show_more').length ) {
-	                $(this).html('<td colspan="2" style="border-top: 2px solid #333;"><div class="show_less button light"><a href="javascript:void(0);">View Less</a></div></td>');
+	                $(this).html('<td colspan="2" style="border-top: 2px solid #333;"><div class="show_less button light"><a href="javascript:void(0);">Show Less</a></div></td>');
 	            } else {
-	                $(this).html('<td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">View More</a></div></td>');
+	                $(this).html('<td colspan="2" style="border-top: 2px solid #333;"><div class="show_more button light"><a href="javascript:void(0);">Show More</a></div></td>');
 	            };
 	        });
 	    };
