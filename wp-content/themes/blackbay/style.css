@@ -1327,7 +1327,7 @@ p:last-of-type {
 	width: 100%;
 }
 
-.photo-gallery, .google-map {
+.google-map {
 	height: 300px!important;
 }
 .photo-gallery.slick-dotted.slick-slider {
