@@ -1459,7 +1459,7 @@ p:last-of-type {
 	background-repeat: no-repeat;
 }
 
-#main-content {
+.archive #main-content {
 	position: relative;
 	height: 100%;
 }
