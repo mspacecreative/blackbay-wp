@@ -1287,6 +1287,15 @@ p:last-of-type {
 	background-position: top right 25%!important;
 }
 
+.bevel-overlay:before {
+	position: absolute;
+	background: rgba(150, 100, 0, .75);
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+
 .fw-container:before {
 	display: none;
 }
