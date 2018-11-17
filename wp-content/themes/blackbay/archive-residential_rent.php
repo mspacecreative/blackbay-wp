@@ -21,7 +21,7 @@ get_header();
 							<div class="grid-sizer"></div>
 							<div class="gutter-sizer"></div>
 							
-							<?php $loop = new WP_Query( array( 'post_type' => 'residential_rent', 'order' => 'ASC' ) );
+							<?php $loop = new WP_Query( array( 'post_type' => 'residential_rent', 'order' => 'DESC' ) );
 									if ( $loop->have_posts() ) :
 							        while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							
