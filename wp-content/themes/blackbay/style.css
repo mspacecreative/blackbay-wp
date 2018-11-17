@@ -862,6 +862,10 @@ img {
 	height: auto!important;
 }
 
+#timeline .slick-list {
+	height: 100%!important;
+}
+
 #index {
 	background: #fff;
 }
