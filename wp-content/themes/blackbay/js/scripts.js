@@ -1,4 +1,4 @@
-$(function () {
+jQuery(document).ready(function($) {
 	
 	// TWO COLUMN LAYOUT FOR BUILDING FEATURES
 	$(function($) {

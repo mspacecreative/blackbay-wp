@@ -1371,7 +1371,7 @@ p:last-of-type {
 }
 }
 
-@media (max-width: 767) {
+@media (max-width: 767px) {
 
 .post-navigation .half:nth-child(2n) {
 	width: 50%;

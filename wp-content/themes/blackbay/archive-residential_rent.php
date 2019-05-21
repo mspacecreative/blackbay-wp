@@ -23,7 +23,7 @@ get_header();
 							
 							<?php $loop = new WP_Query( array( 'post_type' => 'residential_rent', 'order' => 'DESC' ) );
 									if ( $loop->have_posts() ) :
-							        while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							        	while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							
 											<div class="grid-item index-post-box light-grey">
 												<div class="grid-item-shadow">
@@ -40,7 +40,7 @@ get_header();
 												</div>
 											</div>
 							
-											<?php endwhile;
+										<?php endwhile;
 									endif; 
 							wp_reset_postdata(); ?>
 						
