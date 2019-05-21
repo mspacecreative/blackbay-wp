@@ -1,3 +1,5 @@
-$(function () {
-	$('#cover').fadeOut();
+jQuery(document).ready(function($) {
+	$(function () {
+		$('#cover').fadeOut();
+	});
 });
