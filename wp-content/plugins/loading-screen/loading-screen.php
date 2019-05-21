@@ -10,7 +10,7 @@
  
  function page_loading() {
  	wp_enqueue_style( 'loading-css', plugin_dir_url( __FILE__ ) . 'css/cover.css', array(), null );
- 	wp_enqueue_script( 'loading-script', plugin_dir_url( __FILE__ ) . 'js/cover.js', array(), null );
+ 	wp_enqueue_script( 'loading-script', plugin_dir_url( __FILE__ ) . 'js/cover.js', array(), null, true );
  }
  
  function page_cover() {
