@@ -245,11 +245,6 @@ header nav a {
 	position: static;
 }
 
-#commercial {
-	background: url(../img/clyde_bw.jpg) no-repeat center bottom scroll;
-	background-size: cover;
-}
-
 #commercial:before, #residential:before {
 	position: absolute;
 	width: 100%;
@@ -258,11 +253,6 @@ header nav a {
 	top: 0;
 	content: '';
 	background: rgba(30, 15, 0, .8);
-}
-
-#residential {
-	background: url(../img/residential.jpg) no-repeat center bottom scroll;
-	background-size: cover;
 }
 
 #residential .et_pb_text_align_left, #commercial .et_pb_text_align_left {
