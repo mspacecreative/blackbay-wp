@@ -10,6 +10,10 @@ jQuery(document).ready(function($) {
 		});
 	});
 	
+	$(function(){
+	    window.pointerEventsPolyfill();
+	});
+	
 	// TWO COLUMN LAYOUT FOR BUILDING FEATURES
 	$(function($) {
 	    var num_cols = 2,
@@ -2812,7 +2816,3 @@ return Outlayer;
         return new Polyfill(userOptions);
     };
 })(jQuery);
-
-$(function(){
-    window.pointerEventsPolyfill();
-});
